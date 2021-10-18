@@ -1,5 +1,6 @@
 # ACL2021-VYBA
-Mehdi Yahyaoui
-Paul Vincent
-afkir mohammed
-Mohamed Bougaba
+Membres:
+    Mehdi Yahyaoui
+    Paul Vincent
+    Afkir Mohammed
+    Mohamed Bougaba
