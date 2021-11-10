@@ -20,7 +20,7 @@ public class Hero {
 	public void setGender(String gender) {
 		this.gender = gender;
 	}
-	public float[] getInitialPosition() {
+	public int[] getInitialPosition() {
 		return InitialPosition;
 	}
 	public void setInitialPosition(int[] initialPosition) {
@@ -41,4 +41,41 @@ public class Hero {
 		}
 	}
 	
+	public void MoveRight()
+	{
+		pos = getPosition();
+		plateau[pos[0]][pos[1]] = 0;
+		if(pos[1] != plateau.size(1)-1) {
+			plateau[pos[0]][pos[1]+1] = 1;
+		}
+	}
+	
+	public void MoveLeft()
+	{
+		pos = getPosition();
+		plateau[pos[0]][pos[1]] = 0;
+		if(pos[1] != 0) {
+			plateau[pos[0]][pos[1]-1] = 1;
+		}
+		
+	}
+	public void MoveUp()
+	{
+		pos = getPosition();
+		plateau[pos[0]][pos[1]] = 0;
+		if(pos[0] != 0) {
+			plateau[pos[0]-1][pos[1]] = 1;
+		}
+		
+	}
+	
+	public void MoveDown()
+	{
+		pos = getPosition();
+		plateau[pos[0]][pos[1]] = 0;
+		if(pos[1] != plateau.size(0)-1) {
+			plateau[pos[0]+1][pos[1]] = 1;
+		}
+		
+	}
 }
