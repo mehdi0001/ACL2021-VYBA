@@ -1,10 +1,13 @@
 public class Hero extends Plateau{
 	private String name;
-	private String gender;
-	public Hero(String name, String gender, int n, int m) {
-		super(n, m);
+	private char c;
+	public Plateau p;
+	public Hero(String name, char c, int n, int m, int a, int b, Plateau p ){
+		super(n, m, a, b);
 		this.name = name;
-		this.gender = gender;
+		this.c = c;
+		this.p = p;
+		
 	}
 	public String getName() {
 		return name;
@@ -12,54 +15,48 @@ public class Hero extends Plateau{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getGender() {
-		return gender;
+	public char getc() {
+		return c;
 	}
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setGender(char c) {
+		this.c = c;
 	}
 	public int[] getPosition(){
-		int[] a = {0,0};
-		for(int i=0; i<gettableau().length;i++){
-			for(int j=0; j<gettableau()[0].length;j++){
-				if (gettableau()[i][j]==1){
-					a[0] = i;
-					a[1] = j;
+		int[] d = {0,0};
+		for(int i=0; i<p.gettableau().length;i++){
+			for(int j=0; j<p.gettableau()[0].length;j++){
+				if (p.gettableau()[i][j]==1){
+					d[0] = i;
+					d[1] = j;
 				}
 			}
 		}
-		return a;
+		return d;
 	}
 	
 	public void MoveRight()
 	{
 		int[] pos = getPosition();
-		int i = pos[0];
 		int j = pos[1];
-		if(j!= gettableau()[0].length-1) {
-			gettableau()[i][j] = 0;
-			gettableau()[i][j+1] = 1;
+		if(j!= p.gettableau()[0].length-1) {
+			p.setB(j+1);
 		}
 	}
 	
 	public void MoveLeft()
 	{
 		int[] pos = getPosition();
-		int i = pos[0];
 		int j = pos[1];
 		if(j!=0) {
-			gettableau()[i][j] = 0;
-			gettableau()[i][j-1] = 1;
+			p.setB(j-1);
 		}
 	}
 	public void MoveUp()
 	{
 		int[] pos = getPosition();
 		int i = pos[0];
-		int j = pos[1];
 		if(i!=0) {
-			gettableau()[i][j] = 0;
-			gettableau()[i-1][j] = 1;
+			p.setA(i-1);
 		}
 	}
 	
@@ -67,10 +64,8 @@ public class Hero extends Plateau{
 	{
 		int[] pos = getPosition();
 		int i = pos[0];
-		int j = pos[1];
 		if(i!= gettableau().length-1) {
-			gettableau()[i][j] = 0;
-			gettableau()[i+1][j] = 1;
+			p.setA(i+1);
 		}
 }
 }

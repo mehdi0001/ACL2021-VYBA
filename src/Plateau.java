@@ -2,10 +2,26 @@
 public class Plateau {
 	
 	private int n; //nombres de lignes
-	private int m; //nombres de colonne
-	public Plateau(int n, int m) {
+	private int m;//nombres de colonne
+	private int a;
+	private int b;
+	public int getA() {
+		return a;
+	}
+	public void setA(int a) {
+		this.a = a;
+	}
+	public int getB() {
+		return b;
+	}
+	public void setB(int b) {
+		this.b = b;
+	}
+	public Plateau(int n, int m, int a, int b) {
 		this.n = n;
-		this.m = m; 
+		this.m = m;
+		this.a = a;
+		this.b = b;
 		
 	}
 	public int getN() {
@@ -24,7 +40,7 @@ public class Plateau {
 		int[][] tableau = new int[n][];
 		for (int i=0 ; i<tableau.length; i++)
 			tableau[i]=new int[m];
-		tableau[0][0] = 1;
+		tableau[a][b] = 1;
 		return tableau;
 	}
 	public void Affichage(int[][] tableau) {
