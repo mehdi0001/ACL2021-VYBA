@@ -24,6 +24,7 @@ public class Plateau {
 		int[][] tableau = new int[n][];
 		for (int i=0 ; i<tableau.length; i++)
 			tableau[i]=new int[m];
+		tableau[0][0] = 1;
 		return tableau;
 	}
 	public void Affichage(int[][] tableau) {
