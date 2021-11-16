@@ -1,12 +1,12 @@
 public class Hero extends Plateau{
 	private String name;
 	private char c;
-	public Plateau p;
-	public Hero(String name, char c, int n, int m, int a, int b, Plateau p ){
+	//public Plateau p;
+	public Hero(String name, char c, int n, int m, int a, int b/*, Plateau p*/ ){
 		super(n, m, a, b);
 		this.name = name;
 		this.c = c;
-		this.p = p;
+		//this.p = p;
 		
 	}
 	public String getName() {
@@ -23,9 +23,9 @@ public class Hero extends Plateau{
 	}
 	public int[] getPosition(){
 		int[] d = {0,0};
-		for(int i=0; i<p.gettableau().length;i++){
-			for(int j=0; j<p.gettableau()[0].length;j++){
-				if (p.gettableau()[i][j]==1){
+		for(int i=0; i<this.matrice_plateau.length;i++){
+			for(int j=0; j<this.matrice_plateau[0].length;j++){
+				if (this.matrice_plateau[i][j]==1){
 					d[0] = i;
 					d[1] = j;
 				}
@@ -38,8 +38,8 @@ public class Hero extends Plateau{
 	{
 		int[] pos = getPosition();
 		int j = pos[1];
-		if(j!= p.gettableau()[0].length-1) {
-			p.setB(j+1);
+		if(j!= this.matrice_plateau[0].length-1) {
+			this.setB(j+1);
 		}
 	}
 	
@@ -48,7 +48,7 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int j = pos[1];
 		if(j!=0) {
-			p.setB(j-1);
+			this.setB(j-1);
 		}
 	}
 	public void MoveUp()
@@ -56,7 +56,7 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int i = pos[0];
 		if(i!=0) {
-			p.setA(i-1);
+			this.setA(i-1);
 		}
 	}
 	
@@ -65,7 +65,7 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int i = pos[0];
 		if(i!= gettableau().length-1) {
-			p.setA(i+1);
+			this.setA(i+1);
 		}
 }
 }

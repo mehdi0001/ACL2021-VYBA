@@ -5,6 +5,7 @@ public class Plateau {
 	private int m;//nombres de colonne
 	private int a;
 	private int b;
+	public int [][] matrice_plateau;
 	public int getA() {
 		return a;
 	}
@@ -22,6 +23,7 @@ public class Plateau {
 		this.m = m;
 		this.a = a;
 		this.b = b;
+		this.matrice_plateau=gettableau();
 		
 	}
 	public int getN() {
