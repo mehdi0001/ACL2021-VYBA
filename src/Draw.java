@@ -15,17 +15,17 @@ public class Draw extends JPanel
 		for(int array=0; array<matrice_dessin.length; array++) {
 			for(int item=0; item<matrice_dessin[array].length; item++) 
 			{
-				if (matrice_dessin[array][item]==0 || matrice_dessin[array][item]==1)
+				if (matrice_dessin[item][array]==0 || matrice_dessin[array][item]==1)
 				{
 					g.setColor(Color.green);
 					g.fillRect(array*20,item*20,20,20);
 				}
-				if (matrice_dessin[array][item]==1)
+				if (matrice_dessin[item][array]==1)
 				{
 					g.setColor(Color.red);
 					g.fillOval(array*20,item*20,20,20);
 				}
-				if (matrice_dessin[array][item]==2)
+				if (matrice_dessin[item][array]==2)
 				{
 					g.setColor(Color.black);
 					g.fillRect(array*20,item*20,20,20);
