@@ -16,7 +16,7 @@ public class principal extends JFrame implements KeyListener
 	{
 		new principal();
 	}
-	
+
 	principal()
 	{
 		if (this.niveau==99)
@@ -34,7 +34,6 @@ public class principal extends JFrame implements KeyListener
 			selection_niveau.setSize(300, 300); 
 			selection_niveau.show();
 		}
-
 	}
 
 	void deplacement_heros()
@@ -82,7 +81,7 @@ public class principal extends JFrame implements KeyListener
 		}
 	}
 
-	
+
 
 	@Override
 	public void keyTyped(KeyEvent e) 

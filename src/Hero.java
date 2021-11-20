@@ -7,7 +7,6 @@ public class Hero extends Plateau{
 		this.name = name;
 		this.c = c;
 		//this.p = p;
-
 	}
 	public String getName() {
 		return name;

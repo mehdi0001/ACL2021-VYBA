@@ -1,6 +1,5 @@
-
 public class Plateau {
-	
+
 	private int n; //nombres de lignes
 	private int m;//nombres de colonne
 	private int a;
@@ -24,7 +23,7 @@ public class Plateau {
 		this.a = a;
 		this.b = b;
 		this.matrice_plateau=gettableau();
-		
+
 	}
 	public int getN() {
 		return n;
@@ -51,8 +50,8 @@ public class Plateau {
 				System.out.print(tableau[array][item] + "\t");
 			}
 			System.out.println();
+		}
+
+
 	}
-			
-	
-}
 }
