@@ -1,0 +1,7 @@
+Répartition des tâches pour sprint2:
+
+Mehdi Yahyaoui : classe Monster
+Mohamed Bougaba : classe Attaque
+Paul Vincent : Compléter l'interface graphique
+Afkir Mohamed : Mettre à jour les anciennes classes
+Youness Lifsal : Diagramme de classe  
