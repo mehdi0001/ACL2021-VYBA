@@ -2,6 +2,8 @@ public class Hero extends Plateau{
 	private String name;
 	private char c;
 	//public Plateau p;
+	public static int poit_de_vie_intial = 100;
+	private int pointVie;
 	public Hero(String name, char c, int n, int m, int a, int b/*, Plateau p*/ ){
 		super(n, m, a, b);
 		this.name = name;
@@ -78,5 +80,11 @@ public class Hero extends Plateau{
 			this.matrice_plateau[i][j]=0;
 			this.matrice_plateau[i+1][j]=1;
 		}
+	}
+	public int getPointVie() {
+		return pointVie;
+	}
+	public void setPointVie(int pointVie) {
+		this.pointVie = pointVie;
 	}
 }
