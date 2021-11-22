@@ -7,7 +7,7 @@ public class labyrinthe
 		if (niveau==1)
 		{
 			nbr_mur=50;
-			int [][] mur= {{1,1},{2,2},{3,2}s};
+			int [][] mur= {{1,1},{2,2},{3,2}};
 			for (int k=0;k<mur.length;k++)
 			{
 				plateau.matrice_plateau[mur[k][0]][mur[k][1]]=2;
