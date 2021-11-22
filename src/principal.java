@@ -11,6 +11,7 @@ public class principal extends JFrame implements KeyListener
 	public Hero notre_heros;
 	public int niveau=99;
 	public JFrame f;
+	public JFrame selection_niveau;
 	public static void main(String[] args) 
 
 	{
@@ -21,7 +22,7 @@ public class principal extends JFrame implements KeyListener
 	{
 		if (this.niveau==99)
 		{
-			JFrame selection_niveau = new JFrame("Selection du niveau");
+			selection_niveau = new JFrame("Selection du niveau");
 			JPanel panel=new JPanel();
 			JLabel label1 = new JLabel("Appuyez sur 1 pour le niveau 1");
 			JLabel label2= new JLabel ("Appuyez sur 2 pour le niveau 2");
@@ -38,18 +39,31 @@ public class principal extends JFrame implements KeyListener
 
 	void deplacement_heros()
 	{
-
+		selection_niveau.dispose();
 		notre_heros = new Hero("Nom test",'M',20,20,0,0);
-		new labyrinthe(this.niveau,notre_heros);
+		int [] arr = {15,15};
+		new labyrinthe(this.niveau,notre_heros,arr);
 		notre_heros.Affichage(notre_heros.matrice_plateau);
 		f = new JFrame("Labyrinthe");
 		f.getContentPane().setBackground(Color.GREEN);
 		f.getContentPane().add(new Draw(notre_heros));
 		f.addKeyListener(this);
-		f.setSize(400, 400);
+		f.setSize(600, 600);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.show();	
+	}
+	void fin_partie()
+	{
+		f.dispose();
+		JFrame fin = new JFrame();
+		JLabel message_fin= new JLabel("Bravo, vous avez gagné");
+		JPanel panel_fin = new JPanel();
+		panel_fin.add(message_fin);
+		fin.add(panel_fin);
+		fin.setSize(300,300);
+		fin.setVisible(true);
+		fin.show();
 	}
 
 	@Override
@@ -78,6 +92,10 @@ public class principal extends JFrame implements KeyListener
 			notre_heros.MoveRight();
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
+		}
+		if (notre_heros.getPosition()[0]==notre_heros.position_arrivee[0] && notre_heros.getPosition()[1]==notre_heros.position_arrivee[1])
+		{
+			fin_partie();
 		}
 	}
 

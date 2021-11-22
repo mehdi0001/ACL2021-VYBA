@@ -5,6 +5,7 @@ public class Plateau {
 	private int a;
 	private int b;
 	public int [][] matrice_plateau;
+	public int [] position_arrivee;
 	public int getA() {
 		return a;
 	}
