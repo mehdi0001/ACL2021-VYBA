@@ -3,15 +3,14 @@ import java.awt.Graphics;
 import javax.swing.*;
 import java.awt.event.*; 
 import javax.swing.*; 
-import java.awt.*; 
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
-public class principal extends JFrame implements KeyListener
+import java.awt.*;
+public class principal extends JFrame implements KeyListener,ActionListener
 {
 	public Hero notre_heros;
 	public int niveau=99;
 	public JFrame f;
 	public JFrame selection_niveau;
+	public JFrame fin;
 	public static void main(String[] args) 
 
 	{
@@ -41,8 +40,7 @@ public class principal extends JFrame implements KeyListener
 	{
 		selection_niveau.dispose();
 		notre_heros = new Hero("Nom test",'M',20,20,0,0);
-		int [] arr = {15,15};
-		new labyrinthe(this.niveau,notre_heros,arr);
+		new labyrinthe(this.niveau,notre_heros);
 		notre_heros.Affichage(notre_heros.matrice_plateau);
 		f = new JFrame("Labyrinthe");
 		f.getContentPane().setBackground(Color.GREEN);
@@ -56,10 +54,13 @@ public class principal extends JFrame implements KeyListener
 	void fin_partie()
 	{
 		f.dispose();
-		JFrame fin = new JFrame();
+		fin = new JFrame();
 		JLabel message_fin= new JLabel("Bravo, vous avez gagné");
 		JPanel panel_fin = new JPanel();
 		panel_fin.add(message_fin);
+		JButton bouton_rejouer = new JButton("Rejouer");
+		bouton_rejouer.addActionListener(this);
+		panel_fin.add(bouton_rejouer);
 		fin.add(panel_fin);
 		fin.setSize(300,300);
 		fin.setVisible(true);
@@ -125,6 +126,17 @@ public class principal extends JFrame implements KeyListener
 	public void keyReleased(KeyEvent e) {
 		// pas d'action quand on relache la touche
 
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) 
+	{
+		if (e.getActionCommand()=="Rejouer")
+		{
+			fin.dispose();
+			new principal();
+		}
+		
 	}
 }
 
