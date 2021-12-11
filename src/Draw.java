@@ -7,9 +7,14 @@ import javax.swing.JPanel;
 public class Draw extends JPanel
 {
 	int [][] matrice_dessin;
+	char genre;
+	String nom;
 	public Draw(Hero heros)
 	{
 		this.matrice_dessin=heros.matrice_plateau;
+		genre = heros.getc();
+		nom= heros.getName();
+
 	}
 	public void paint(Graphics g)
 	{
@@ -23,10 +28,17 @@ public class Draw extends JPanel
 				}
 				if (matrice_dessin[item][array]==1)
 				{
-					g.setColor(Color.blue);
+					if (genre == 'M')
+					{
+						g.setColor(Color.blue);
+					}
+					if (genre == 'F')
+					{
+						g.setColor(Color.pink);
+					}
 					g.fillOval(array*20,item*20,20,20);
 				}
-				
+
 				if (matrice_dessin[item][array]==2)
 				{
 					g.setColor(Color.black);
@@ -49,7 +61,14 @@ public class Draw extends JPanel
 				}
 			}
 		}
-		g.setColor(Color.blue);
+		if (genre == 'M')
+		{
+			g.setColor(Color.blue);
+		}
+		if (genre == 'F')
+		{
+			g.setColor(Color.pink);
+		}
 		g.fillOval(450,100,20,20);
 		g.setColor(Color.black);
 		g.fillRect(450,150,20,20);
@@ -65,5 +84,6 @@ public class Draw extends JPanel
 		g.drawString("Monstres",480, 215);
 		g.drawString("Fantomes",480, 265);
 		g.drawString("Arrivé",480, 315);
+		g.drawString("Nom du joueur : "+nom,50, 450);
 	}
 }
