@@ -1,9 +1,12 @@
+import java.util.ArrayList;
 
 public class labyrinthe 
 {
 	int nbr_mur;
 	public labyrinthe(int niveau, Plateau plateau)
 	{
+		plateau.liste_fantome= new ArrayList<Fantome>();
+		plateau.liste_monstre= new ArrayList<Monster>();
 		if (niveau==1)
 		{
 			int [][] mur= {{0,1},{1,1},{2,1},{3,1},{3,2},{16,2},{3,3},{6,3},{7,3},{8,3},{16,3},{3,4},{4,4},{5,4},{8,4},{16,4},{8,5},{9,5},{10,5},{11,5},{12,5},{13,5},{16,5},{13,6},{13,7},{13,8},{4,9},{5,9},{6,9},{7,9},{8,9},{13,9},{16,9},{17,9},{13,10},{13,11},{13,12},{13,13},{4,14},{5,14},{6,14},{7,14},{8,14},{13,14},{14,14},{15,14},{10,16},{10,17},{10,18},{11,18},{12,18}};
@@ -14,6 +17,43 @@ public class labyrinthe
 			int [] arrivee= {0,19};
 			plateau.matrice_plateau[arrivee[0]][arrivee[1]]=5;
 			plateau.position_arrivee=arrivee;
+			
+			int a=(int)(Math.random()*20);
+			int b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add(new Monster (1,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add(new Monster (2,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (1,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (2,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
 			
 		}
 		if (niveau==2)
@@ -26,6 +66,60 @@ public class labyrinthe
 			int [] arrivee= {0,19};
 			plateau.matrice_plateau[arrivee[0]][arrivee[1]]=5;
 			plateau.position_arrivee=arrivee;
+			int a=(int)(Math.random()*20);
+			int b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add (new Monster (1,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add(new Monster (2,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (1,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (2,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add(new Monster (3,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (3,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
 		}
 		if (niveau==3)
 		{
@@ -37,7 +131,79 @@ public class labyrinthe
 			int [] arrivee= {12,19};
 			plateau.matrice_plateau[arrivee[0]][arrivee[1]]=5;
 			plateau.position_arrivee= arrivee;
+			int a=(int)(Math.random()*20);
+			int b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add(new Monster (1,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add(new Monster (2,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (1,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (2,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add(new Monster (3,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_monstre.add( new Monster (4,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=3;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (3,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
+			a=(int)(Math.random()*20);
+			b=(int)(Math.random()*20);
+			while (plateau.matrice_plateau[a][b]!=0)
+			{
+				a=(int)(Math.random()*20);
+				b=(int)(Math.random()*20);
+			}
+			plateau.liste_fantome.add(new Fantome (4,100,a,b,plateau));
+			plateau.matrice_plateau[a][b]=4;
 		}
 	}
-	
+
 }

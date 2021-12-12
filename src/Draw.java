@@ -51,12 +51,19 @@ public class Draw extends JPanel
 				}
 				if (matrice_dessin[item][array]==4)
 				{
-					g.setColor(Color.darkGray);
+					g.setColor(Color.white);
 					g.fillOval(array*20,item*20,20,20);
 				}
 				if (matrice_dessin[item][array]==5)
 				{
 					g.setColor(Color.yellow);
+					g.fillOval(array*20,item*20,20,20);
+				}
+				if (matrice_dessin[item][array]==6) //Cas où le fantome traverse le mur
+				{
+					g.setColor(Color.black);
+					g.fillRect(array*20,item*20,20,20);
+					g.setColor(Color.white);
 					g.fillOval(array*20,item*20,20,20);
 				}
 			}
@@ -74,7 +81,7 @@ public class Draw extends JPanel
 		g.fillRect(450,150,20,20);
 		g.setColor(Color.RED);
 		g.fillOval(450,200,20,20);
-		g.setColor(Color.darkGray);
+		g.setColor(Color.white);
 		g.fillOval(450,250,20,20);
 		g.setColor(Color.yellow);
 		g.fillOval(450,300,20,20);

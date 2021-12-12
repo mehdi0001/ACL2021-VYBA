@@ -70,8 +70,8 @@ public class principal extends JFrame implements KeyListener,ActionListener
 	void deplacement_heros()
 	{
 		selection_niveau.dispose();
-		notre_heros = new Hero(nom.getText(),genre_heros,20,20,0,0);
-		new labyrinthe(this.niveau,notre_heros);
+		this.notre_heros = new Hero(nom.getText(),genre_heros,20,20,0,0);
+		new labyrinthe(this.niveau,this.notre_heros);
 		notre_heros.Affichage(notre_heros.matrice_plateau);
 		f = new JFrame("Labyrinthe");
 		f.getContentPane().setBackground(Color.GREEN);
@@ -107,24 +107,180 @@ public class principal extends JFrame implements KeyListener,ActionListener
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) 
 		{ 
 			notre_heros.MoveDown();
+			double depMon;
+			double depFan;
+			for (int k=0;k<notre_heros.liste_fantome.size();k++)
+			{
+				depMon = Math.random();
+				depFan = Math.random();
+				if (depMon<0.25)
+				{
+				notre_heros.liste_monstre.get(k).MoveDownMon();
+				}
+				if (depMon<0.50 && depMon>=0.25)
+				{
+				notre_heros.liste_monstre.get(k).MoveLeftMon();
+				}
+				if (depMon<0.75 && depMon>=0.5)
+				{
+				notre_heros.liste_monstre.get(k).MoveRightMon();
+				}
+				if (depMon>=0.75)
+				{
+				notre_heros.liste_monstre.get(k).MoveUpMon();
+				}
+				if (depFan<0.25)
+				{
+				notre_heros.liste_fantome.get(k).MoveDownFan();
+				}
+				if (depFan<0.50 && depFan>=0.25)
+				{
+				notre_heros.liste_fantome.get(k).MoveLeftFan();
+				}
+				if (depFan<0.75 && depFan>=0.5)
+				{
+				notre_heros.liste_fantome.get(k).MoveRightFan();
+				}
+				if (depFan>=0.75)
+				{
+				notre_heros.liste_fantome.get(k).MoveUpFan();
+				}
+			}
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 
 		if (e.getKeyCode() == KeyEvent.VK_UP) { 
 			notre_heros.MoveUp();
+			double depMon;
+			double depFan;
+			for (int k=0;k<notre_heros.liste_fantome.size();k++)
+			{
+				depMon = Math.random();
+				depFan = Math.random();
+				if (depMon<0.25)
+				{
+				notre_heros.liste_monstre.get(k).MoveDownMon();
+				}
+				if (depMon<0.50 && depMon>=0.25)
+				{
+				notre_heros.liste_monstre.get(k).MoveLeftMon();
+				}
+				if (depMon<0.75 && depMon>=0.5)
+				{
+				notre_heros.liste_monstre.get(k).MoveRightMon();
+				}
+				if (depMon>=0.75)
+				{
+				notre_heros.liste_monstre.get(k).MoveUpMon();
+				}
+				if (depFan<0.25)
+				{
+				notre_heros.liste_fantome.get(k).MoveDownFan();
+				}
+				if (depFan<0.50 && depFan>=0.25)
+				{
+				notre_heros.liste_fantome.get(k).MoveLeftFan();
+				}
+				if (depFan<0.75 && depFan>=0.5)
+				{
+				notre_heros.liste_fantome.get(k).MoveRightFan();
+				}
+				if (depFan>=0.75)
+				{
+				notre_heros.liste_fantome.get(k).MoveUpFan();
+				}
+			}
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_LEFT)
 		{ 
 			notre_heros.MoveLeft();
+			double depMon;
+			double depFan;
+			for (int k=0;k<notre_heros.liste_fantome.size();k++)
+			{
+				depMon = Math.random();
+				depFan = Math.random();
+				if (depMon<0.25)
+				{
+				notre_heros.liste_monstre.get(k).MoveDownMon();
+				}
+				if (depMon<0.50 && depMon>=0.25)
+				{
+				notre_heros.liste_monstre.get(k).MoveLeftMon();
+				}
+				if (depMon<0.75 && depMon>=0.5)
+				{
+				notre_heros.liste_monstre.get(k).MoveRightMon();
+				}
+				if (depMon>=0.75)
+				{
+				notre_heros.liste_monstre.get(k).MoveUpMon();
+				}
+				if (depFan<0.25)
+				{
+				notre_heros.liste_fantome.get(k).MoveDownFan();
+				}
+				if (depFan<0.50 && depFan>=0.25)
+				{
+				notre_heros.liste_fantome.get(k).MoveLeftFan();
+				}
+				if (depFan<0.75 && depFan>=0.5)
+				{
+				notre_heros.liste_fantome.get(k).MoveRightFan();
+				}
+				if (depFan>=0.75)
+				{
+				notre_heros.liste_fantome.get(k).MoveUpFan();
+				}
+			}
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_RIGHT)
 		{
 			notre_heros.MoveRight();
+			double depMon;
+			double depFan;
+			for (int k=0;k<notre_heros.liste_fantome.size();k++)
+			{
+				depMon = Math.random();
+				depFan = Math.random();
+				if (depMon<0.25)
+				{
+				notre_heros.liste_monstre.get(k).MoveDownMon();
+				}
+				if (depMon<0.50 && depMon>=0.25)
+				{
+				notre_heros.liste_monstre.get(k).MoveLeftMon();
+				}
+				if (depMon<0.75 && depMon>=0.5)
+				{
+				notre_heros.liste_monstre.get(k).MoveRightMon();
+				}
+				if (depMon>=0.75)
+				{
+				notre_heros.liste_monstre.get(k).MoveUpMon();
+				}
+				if (depFan<0.25)
+				{
+				notre_heros.liste_fantome.get(k).MoveDownFan();
+				}
+				if (depFan<0.50 && depFan>=0.25)
+				{
+				notre_heros.liste_fantome.get(k).MoveLeftFan();
+				}
+				if (depFan<0.75 && depFan>=0.5)
+				{
+				notre_heros.liste_fantome.get(k).MoveRightFan();
+				}
+				if (depFan>=0.75)
+				{
+				notre_heros.liste_fantome.get(k).MoveUpFan();
+				}
+			}
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}

@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Plateau {
 
 	private int n; //nombres de lignes
@@ -6,6 +8,10 @@ public class Plateau {
 	private int b;
 	public int [][] matrice_plateau;
 	public int [] position_arrivee;
+	public Monster m1,m2,m3,m4;
+	public Fantome f1,f2,f3,f4;
+	public ArrayList<Monster> liste_monstre;
+	public ArrayList<Fantome> liste_fantome;
 	public int getA() {
 		return a;
 	}
