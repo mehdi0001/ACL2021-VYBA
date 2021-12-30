@@ -7,12 +7,16 @@ public class labyrinthe
 	{
 		plateau.liste_fantome= new ArrayList<Fantome>();
 		plateau.liste_monstre= new ArrayList<Monster>();
+		mur1 m1 = new mur1();
+		mur1_2 m2 = new mur1_2();
 		if (niveau==1)
 		{
-			int [][] mur= {{0,1},{1,1},{2,1},{3,1},{3,2},{16,2},{3,3},{6,3},{7,3},{8,3},{16,3},{3,4},{4,4},{5,4},{8,4},{16,4},{8,5},{9,5},{10,5},{11,5},{12,5},{13,5},{16,5},{13,6},{13,7},{13,8},{4,9},{5,9},{6,9},{7,9},{8,9},{13,9},{16,9},{17,9},{13,10},{13,11},{13,12},{13,13},{4,14},{5,14},{6,14},{7,14},{8,14},{13,14},{14,14},{15,14},{10,16},{10,17},{10,18},{11,18},{12,18}};
-			for (int k=0;k<mur.length;k++)
+			
+			for (int k=0;k<51;k++)
 			{
-				plateau.matrice_plateau[mur[k][0]][mur[k][1]]=2;
+				int i=Integer.parseInt(m1.mur11().get(k));
+				int j=Integer.parseInt(m2.mur12().get(k));  
+				plateau.matrice_plateau[i][j]=2;
 			}
 			int [] arrivee= {0,19};
 			plateau.matrice_plateau[arrivee[0]][arrivee[1]]=5;
