@@ -1,0 +1,28 @@
+Sprint 1 :
+
+
+Mehdi : Classe Hero (Attributs)
+Paul : Méthode GetPosition de la class Hero
+Afkir : Méthode Move
+Bougaba : Classe Plateau
+
+
+Sprint 2:
+
+
+
+Mehdi yahyaoui : classe monster
+Mohamed bougaba : classe Attaque
+Paul Vincent : Compléter l’interface graphique
+Afkir Mohamed : Mettre à jour les anciennes
+Youness Lisal : Diagramme de classe
+
+Sprint 3:
+
+Mehdi yahyaoui : trésor
+Mohamed bougaba : piege
+Paul Vincent : Compléter l’interface graphique
+Afkir Mohamed : magique
+Youness Lisal : passage
+
+
