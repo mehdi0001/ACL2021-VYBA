@@ -9,7 +9,7 @@ public class mur2_2 {
 			    try
 			    {
 			      // Le fichier d'entrée
-			      FileInputStream file = new FileInputStream("niveau2_2.txt");   
+			      FileInputStream file = new FileInputStream("niveaux/niveau2_2.txt");   
 			      Scanner scanner = new Scanner(file);  
 			      String mur22 = "";
 			      //renvoie true s'il y a une autre ligne à lire

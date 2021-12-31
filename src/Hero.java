@@ -32,6 +32,7 @@ public class Hero extends Plateau{
 				}
 			}
 		}
+		System.out.println("Position héros : "+d[0]+","+d[1]);
 		return d;
 	}
 
@@ -40,10 +41,21 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int i =pos[0];
 		int j = pos[1];
-		if(j!= this.matrice_plateau[0].length-1 && this.matrice_plateau[i][j+1]!=2) {
-			this.setB(j+1);
-			this.matrice_plateau[i][j]=0;
-			this.matrice_plateau[i][j+1]=1;
+		if(j!= this.matrice_plateau[0].length-1 ) {
+			if(this.matrice_plateau[i][j+1]!=2&& this.matrice_plateau[i][j+1]!=3&& this.matrice_plateau[i][j+1]!=4)
+			{
+				this.setB(j+1);
+				this.matrice_plateau[i][j]=0;
+				this.matrice_plateau[i][j+1]=1;
+			}
+
+			if(this.matrice_plateau[i][j+1]==3 || this.matrice_plateau[i][j+1]==4)
+			{
+				this.setA(0);
+				this.setB(0);
+				this.matrice_plateau[i][j]=0;
+				this.matrice_plateau[this.getA()][this.getB()]=1;
+			}
 		}
 	}
 
@@ -52,10 +64,21 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int i = pos[0];
 		int j = pos[1];
-		if(j!=0 && this.matrice_plateau[i][j-1]!=2) {
-			this.setB(j-1);
-			this.matrice_plateau[i][j]=0;
-			this.matrice_plateau[i][j-1]=1;
+		if(j!=0) {
+			if(this.matrice_plateau[i][j-1]!=3&& this.matrice_plateau[i][j-1]!=4 && this.matrice_plateau[i][j-1]!=2)
+			{
+				this.setB(j-1);
+				this.matrice_plateau[i][j]=0;
+				this.matrice_plateau[i][j-1]=1;
+			}
+
+			if(this.matrice_plateau[i][j-1]==3 || this.matrice_plateau[i][j-1]==4)
+			{
+				this.setA(0);
+				this.setB(0);
+				this.matrice_plateau[i][j]=0;
+				this.matrice_plateau[this.getA()][this.getB()]=1;
+			}
 		}
 	}
 	public void MoveUp()
@@ -63,10 +86,21 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int i = pos[0];
 		int j = pos[1];
-		if(i!=0 && this.matrice_plateau[i-1][j]!=2) {
-			this.setA(i-1);
-			this.matrice_plateau[i][j]=0;
-			this.matrice_plateau[i-1][j]=1;
+		if(i!=0 ) {
+			if(this.matrice_plateau[i-1][j]!=2&& this.matrice_plateau[i-1][j]!=3&& this.matrice_plateau[i-1][j]!=4)
+			{
+				this.setA(i-1);
+				this.matrice_plateau[i][j]=0;
+				this.matrice_plateau[i-1][j]=1;
+			}
+
+			if(this.matrice_plateau[i-1][j]==3 || this.matrice_plateau[i-1][j]==4)
+			{
+				this.setA(0);
+				this.setB(0);
+				this.matrice_plateau[i][j]=0;
+				this.matrice_plateau[this.getA()][this.getB()]=1;
+			}
 		}
 	}
 
@@ -75,10 +109,21 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int i = pos[0];
 		int j = pos[1];
-		if(i!= gettableau().length-1 && this.matrice_plateau[i+1][j]!=2) {
-			this.setA(i+1);
-			this.matrice_plateau[i][j]=0;
-			this.matrice_plateau[i+1][j]=1;
+		if(i!= gettableau().length-1) {
+			if(this.matrice_plateau[i+1][j]!=2 && this.matrice_plateau[i+1][j]!=3&& this.matrice_plateau[i+1][j]!=4)
+			{
+				this.setA(i+1);
+				this.matrice_plateau[i][j]=0;
+				this.matrice_plateau[i+1][j]=1;
+			}
+
+			if(this.matrice_plateau[i+1][j]==3 || this.matrice_plateau[i+1][j]==4)
+			{
+				this.setA(0);
+				this.setB(0);
+				this.matrice_plateau[i][j]=0;
+				this.matrice_plateau[this.getA()][this.getB()]=1;
+			}
 		}
 	}
 	public int getPointVie() {

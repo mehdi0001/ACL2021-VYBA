@@ -11,7 +11,7 @@ public class mur1_2 {
 			    try
 			    {
 			      // Le fichier d'entrée
-			      FileInputStream file = new FileInputStream("niveau1_2.txt");   
+			      FileInputStream file = new FileInputStream("niveaux/niveau1_2.txt");   
 			      Scanner scanner = new Scanner(file);  
 			      String mur12 = "";
 			      //renvoie true s'il y a une autre ligne à lire

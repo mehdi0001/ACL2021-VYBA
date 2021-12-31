@@ -49,41 +49,53 @@ public class Monster{ //extends Plateau{
 	{
 		int i =pos_a;
 		int j = pos_b;
-		if(j!= this.plat.matrice_plateau[0].length-1 && this.plat.matrice_plateau[i][j+1]!=2 && this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4) 
+		if(j!= this.plat.matrice_plateau[0].length-1 )
+			if(this.plat.matrice_plateau[i][j+1]!=2 && this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5)
+			{
 		{
 			this.plat.matrice_plateau[i][j]=0;
 			this.plat.matrice_plateau[i][j+1]=3;
 			pos_b=pos_b+1;
 		}
 	}
+	}
 	public void MoveUpMon()
 	{
 		int i =pos_a;
 		int j = pos_b;
-		if(i!=0 && this.plat.matrice_plateau[i-1][j]!=2 && this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4) {
+		if(i!=0 ) {
+			if(this.plat.matrice_plateau[i-1][j]!=2 && this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5)
+			{
 			this.plat.matrice_plateau[i][j]=0;
 			this.plat.matrice_plateau[i-1][j]=3;
 			pos_a=pos_a-1;
 		}
+			}
 	}
 	public void MoveLeftMon()
 	{
 		int i =pos_a;
 		int j = pos_b;
-		if(j!= 0 && this.plat.matrice_plateau[i][j-1]!=2 && this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4) {
+		if(j!= 0 ) {
+			if(this.plat.matrice_plateau[i][j-1]!=2 && this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4 && this.plat.matrice_plateau[i][j-1]!=5)
+			{
 			this.plat.matrice_plateau[i][j]=0;
 			this.plat.matrice_plateau[i][j-1]=3;
 			pos_b=pos_b-1;
 		}
+			}
 	}
 	public void MoveDownMon()
 	{
 		int i =pos_a;
 		int j = pos_b;
-		if(i!= this.plat.matrice_plateau.length-1 && this.plat.matrice_plateau[i+1][j]!=2 && this.plat.matrice_plateau[i+1][j-1]!=3 && this.plat.matrice_plateau[i+1][j-1]!=4) {
+		if(i!= this.plat.matrice_plateau.length-1 ) {
+			if(this.plat.matrice_plateau[i+1][j]!=2 && this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5)
+			{
 			this.plat.matrice_plateau[i][j]=0;
 			this.plat.matrice_plateau[i+1][j]=3;
 			pos_a=pos_a+1;
+		}
 		}
 	}
 

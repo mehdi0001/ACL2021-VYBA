@@ -49,37 +49,44 @@ public class Fantome{ //extends Plateau {
 	{
 		int i =pos_a;
 		int j = pos_b;
-		if (this.plat.matrice_plateau[i][j]!=6 && this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4)
+		if (this.plat.matrice_plateau[i][j]!=6 )
 		{
+
 			if(j!= this.plat.matrice_plateau.length-1) {
-				if (this.plat.matrice_plateau[i][j+1]==2)
+				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5)
 				{
-					this.plat.matrice_plateau[i][j]=0;
-					this.plat.matrice_plateau[i][j-1]=6;
-					pos_b=pos_b+1;
-				}
-				else
-				{
-					this.plat.matrice_plateau[i][j]=0;
-					this.plat.matrice_plateau[i][j+1]=4;
-					pos_b=pos_b+1;
+					if (this.plat.matrice_plateau[i][j+1]==2)
+					{
+						this.plat.matrice_plateau[i][j]=0;
+						this.plat.matrice_plateau[i][j+1]=6;
+						pos_b=pos_b+1;
+					}
+					else
+					{
+						this.plat.matrice_plateau[i][j]=0;
+						this.plat.matrice_plateau[i][j+1]=4;
+						pos_b=pos_b+1;
+					}
 				}
 			}
 		}
 		else
 		{
 			if(j!= this.plat.matrice_plateau.length-1) {
-				if (this.plat.matrice_plateau[i][j+1]==2)
+				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5)
 				{
-					this.plat.matrice_plateau[i][j]=2;
-					this.plat.matrice_plateau[i][j+1]=6;
-					pos_b=pos_b+1;
-				}
-				else
-				{
-					this.plat.matrice_plateau[i][j]=2;
-					this.plat.matrice_plateau[i][j+1]=4;
-					pos_b=pos_b+1;
+					if (this.plat.matrice_plateau[i][j+1]==2)
+					{
+						this.plat.matrice_plateau[i][j]=2;
+						this.plat.matrice_plateau[i][j+1]=6;
+						pos_b=pos_b+1;
+					}
+					else
+					{
+						this.plat.matrice_plateau[i][j]=2;
+						this.plat.matrice_plateau[i][j+1]=4;
+						pos_b=pos_b+1;
+					}
 				}
 			}
 		}
@@ -88,37 +95,43 @@ public class Fantome{ //extends Plateau {
 	{
 		int i =pos_a;
 		int j = pos_b;
-		if (this.plat.matrice_plateau[i][j]!=6 && this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4)
+		if (this.plat.matrice_plateau[i][j]!=6 )
 		{
 			if(i!= 0) {
-				if (this.plat.matrice_plateau[i-1][j]==2)
+				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5)
 				{
-					this.plat.matrice_plateau[i][j]=0;
-					this.plat.matrice_plateau[i-1][j]=6;
-					pos_a=pos_a-1;
-				}
-				else
-				{
-					this.plat.matrice_plateau[i][j]=0;
-					this.plat.matrice_plateau[i-1][j]=4;
-					pos_a=pos_a-1;
+					if (this.plat.matrice_plateau[i-1][j]==2)
+					{
+						this.plat.matrice_plateau[i][j]=0;
+						this.plat.matrice_plateau[i-1][j]=6;
+						pos_a=pos_a-1;
+					}
+					else
+					{
+						this.plat.matrice_plateau[i][j]=0;
+						this.plat.matrice_plateau[i-1][j]=4;
+						pos_a=pos_a-1;
+					}
 				}
 			}
 		}
 		else
 		{
 			if(i!= 0) {
-				if (this.plat.matrice_plateau[i-1][j]==2)
+				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5)
 				{
-					this.plat.matrice_plateau[i][j]=2;
-					this.plat.matrice_plateau[i-1][j]=6;
-					pos_a=pos_a-1;
-				}
-				else
-				{
-					this.plat.matrice_plateau[i][j]=2;
-					this.plat.matrice_plateau[i-1][j]=4;
-					pos_a=pos_a-1;
+					if (this.plat.matrice_plateau[i-1][j]==2)
+					{
+						this.plat.matrice_plateau[i][j]=2;
+						this.plat.matrice_plateau[i-1][j]=6;
+						pos_a=pos_a-1;
+					}
+					else
+					{
+						this.plat.matrice_plateau[i][j]=2;
+						this.plat.matrice_plateau[i-1][j]=4;
+						pos_a=pos_a-1;
+					}
 				}
 			}
 		}
@@ -127,37 +140,43 @@ public class Fantome{ //extends Plateau {
 	{
 		int i =pos_a;
 		int j = pos_b;
-		if (this.plat.matrice_plateau[i][j]!=6 && this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4)
+		if (this.plat.matrice_plateau[i][j]!=6 )
 		{
 			if(j!=0) {
-				if (this.plat.matrice_plateau[i][j-1]==2)
+				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5)
 				{
-					this.plat.matrice_plateau[i][j]=0;
-					this.plat.matrice_plateau[i][j-1]=6;
-					pos_b=pos_b-1;
-				}
-				else
-				{
-					this.plat.matrice_plateau[i][j]=0;
-					this.plat.matrice_plateau[i][j-1]=4;
-					pos_b=pos_b-1;
+					if (this.plat.matrice_plateau[i][j-1]==2)
+					{
+						this.plat.matrice_plateau[i][j]=0;
+						this.plat.matrice_plateau[i][j-1]=6;
+						pos_b=pos_b-1;
+					}
+					else
+					{
+						this.plat.matrice_plateau[i][j]=0;
+						this.plat.matrice_plateau[i][j-1]=4;
+						pos_b=pos_b-1;
+					}
 				}
 			}
 		}
 		else
 		{
 			if(j!=0) {
-				if (this.plat.matrice_plateau[i][j-1]==2 && this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4)
+				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5)
 				{
-					this.plat.matrice_plateau[i][j]=2;
-					this.plat.matrice_plateau[i][j-1]=6;
-					pos_b=pos_b-1;
-				}
-				else
-				{
-					this.plat.matrice_plateau[i][j]=2;
-					this.plat.matrice_plateau[i][j-1]=4;
-					pos_b=pos_b-1;
+					if (this.plat.matrice_plateau[i][j-1]==2)
+					{
+						this.plat.matrice_plateau[i][j]=2;
+						this.plat.matrice_plateau[i][j-1]=6;
+						pos_b=pos_b-1;
+					}
+					else
+					{
+						this.plat.matrice_plateau[i][j]=2;
+						this.plat.matrice_plateau[i][j-1]=4;
+						pos_b=pos_b-1;
+					}
 				}
 			}
 		}
@@ -168,35 +187,41 @@ public class Fantome{ //extends Plateau {
 		int j = pos_b;
 		if (this.plat.matrice_plateau[i][j]!=6)
 		{
-			if(i!= this.plat.matrice_plateau.length-1 && this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4) {
-				if (this.plat.matrice_plateau[i+1][j]==2)
+			if(i!= this.plat.matrice_plateau.length-1) {
+				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5)
 				{
-					this.plat.matrice_plateau[i][j]=0;
-					this.plat.matrice_plateau[i+1][j]=6;
-					pos_a=pos_a+1;
-				}
-				else
-				{
-					this.plat.matrice_plateau[i][j]=0;
-					this.plat.matrice_plateau[i+1][j]=4;
-					pos_a=pos_a+1;
+					if (this.plat.matrice_plateau[i+1][j]==2)
+					{
+						this.plat.matrice_plateau[i][j]=0;
+						this.plat.matrice_plateau[i+1][j]=6;
+						pos_a=pos_a+1;
+					}
+					else
+					{
+						this.plat.matrice_plateau[i][j]=0;
+						this.plat.matrice_plateau[i+1][j]=4;
+						pos_a=pos_a+1;
+					}
 				}
 			}
 		}
 		else
 		{
-			if(i!= this.plat.matrice_plateau.length-1 && this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4) {
-				if (this.plat.matrice_plateau[i+1][j]==2)
+			if(i!= this.plat.matrice_plateau.length-1) {
+				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5)
 				{
-					this.plat.matrice_plateau[i][j]=2;
-					this.plat.matrice_plateau[i+1][j]=6;
-					pos_a=pos_a+1;
-				}
-				else
-				{
-					this.plat.matrice_plateau[i][j]=2;
-					this.plat.matrice_plateau[i+1][j]=4;
-					pos_a=pos_a+1;
+					if (this.plat.matrice_plateau[i+1][j]==2)
+					{
+						this.plat.matrice_plateau[i][j]=2;
+						this.plat.matrice_plateau[i+1][j]=6;
+						pos_a=pos_a+1;
+					}
+					else
+					{
+						this.plat.matrice_plateau[i][j]=2;
+						this.plat.matrice_plateau[i+1][j]=4;
+						pos_a=pos_a+1;
+					}
 				}
 			}
 		}

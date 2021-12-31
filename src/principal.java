@@ -105,8 +105,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 	public void keyPressed(KeyEvent e) 
 	{
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) 
-		{ 
-			notre_heros.MoveDown();
+		{
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -146,12 +145,12 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				notre_heros.liste_fantome.get(k).MoveUpFan();
 				}
 			}
+			notre_heros.MoveDown();
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 
 		if (e.getKeyCode() == KeyEvent.VK_UP) { 
-			notre_heros.MoveUp();
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -191,12 +190,13 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				notre_heros.liste_fantome.get(k).MoveUpFan();
 				}
 			}
+			notre_heros.MoveUp();
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_LEFT)
 		{ 
-			notre_heros.MoveLeft();
+			
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -236,12 +236,12 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				notre_heros.liste_fantome.get(k).MoveUpFan();
 				}
 			}
+			notre_heros.MoveLeft();
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_RIGHT)
 		{
-			notre_heros.MoveRight();
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -281,9 +281,14 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				notre_heros.liste_fantome.get(k).MoveUpFan();
 				}
 			}
+			notre_heros.MoveRight();
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
+		/*System.out.println();
+		System.out.println(notre_heros.liste_fantome.get(0).pos_a);
+		System.out.println(notre_heros.liste_fantome.get(0).pos_b);
+		notre_heros.Affichage(notre_heros.matrice_plateau);*/
 		if (notre_heros.getPosition()[0]==notre_heros.position_arrivee[0] && notre_heros.getPosition()[1]==notre_heros.position_arrivee[1])
 		{
 			fin_partie();
