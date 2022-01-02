@@ -32,7 +32,7 @@ public class Hero extends Plateau{
 				}
 			}
 		}
-		System.out.println("Position héros : "+d[0]+","+d[1]);
+		System.out.println("Position hï¿½ros : "+d[0]+","+d[1]);
 		return d;
 	}
 
@@ -57,6 +57,7 @@ public class Hero extends Plateau{
 				this.matrice_plateau[this.getA()][this.getB()]=1;
 			}
 		}
+		
 	}
 
 	public void MoveLeft()
