@@ -47,7 +47,7 @@ class TestMonstre {
 		assertEquals(M.getPosition_monster()[1],4);
 	}
 	@Test
-	void testMoveUp() {
+	void testMoveDown() {
 		Plateau p = new Plateau(20,20,5,5);
 		Monster M = new Monster(7,100,5,5,p);
 		M.MoveDownMon();
@@ -55,7 +55,7 @@ class TestMonstre {
 		
 	}
 	@Test
-	void MoveUp() {
+	void testMoveUp() {
 		Plateau p = new Plateau(20,20,5,5);
 		Monster M = new Monster(7,100,5,5,p);
 		M.MoveUpMon();
