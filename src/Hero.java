@@ -133,4 +133,23 @@ public class Hero extends Plateau{
 	public void setPointVie(int pointVie) {
 		this.pointVie = pointVie;
 	}
+	public void attaque_hero() {
+		int[] pos = getPosition();
+		int i = pos[0];
+		int j = pos[1];
+		for (int k=0; k<gettableau().length-1; ++i){
+		if (this.matrice_plateau[i][k]==3 ) {
+			this.matrice_plateau[i][k]=0;
+		}
+		else if (this.matrice_plateau[i][k]==4) {
+			this.matrice_plateau[i][k]=0;
+		}
+		else if (this.matrice_plateau[k][j]==3) {
+			this.matrice_plateau[k][j]=0;
+		}
+		else if (this.matrice_plateau[k][j]==4) {
+			this.matrice_plateau[k][j]=0;
+		}
+	}
+	}
 }
