@@ -3,12 +3,13 @@ public class Hero extends Plateau{
 	private char c;
 	//public Plateau p;
 	public static int poit_de_vie_intial = 100;
-	private int pointVie;
+	public int pointVie;
 	public Hero(String name, char c, int n, int m, int a, int b/*, Plateau p*/ ){
 		super(n, m, a, b);
 		this.name = name;
 		this.c = c;
 		//this.p = p;
+		pointVie = 100;
 	}
 	public String getName() {
 		return name;
@@ -42,7 +43,7 @@ public class Hero extends Plateau{
 		int i =pos[0];
 		int j = pos[1];
 		if(j!= this.matrice_plateau[0].length-1 ) {
-			if(this.matrice_plateau[i][j+1]!=2&& this.matrice_plateau[i][j+1]!=3&& this.matrice_plateau[i][j+1]!=4)
+			if(this.matrice_plateau[i][j+1]!=2&& this.matrice_plateau[i][j+1]!=3&& this.matrice_plateau[i][j+1]!=4&& this.matrice_plateau[i][j+1]!=6)
 			{
 				this.setB(j+1);
 				this.matrice_plateau[i][j]=0;
@@ -51,13 +52,14 @@ public class Hero extends Plateau{
 
 			if(this.matrice_plateau[i][j+1]==3 || this.matrice_plateau[i][j+1]==4)
 			{
+				this.pointVie=this.pointVie - 25;
 				this.setA(0);
 				this.setB(0);
 				this.matrice_plateau[i][j]=0;
 				this.matrice_plateau[this.getA()][this.getB()]=1;
 			}
 		}
-		
+
 	}
 
 	public void MoveLeft()
@@ -66,7 +68,7 @@ public class Hero extends Plateau{
 		int i = pos[0];
 		int j = pos[1];
 		if(j!=0) {
-			if(this.matrice_plateau[i][j-1]!=3&& this.matrice_plateau[i][j-1]!=4 && this.matrice_plateau[i][j-1]!=2)
+			if(this.matrice_plateau[i][j-1]!=3&& this.matrice_plateau[i][j-1]!=4 && this.matrice_plateau[i][j-1]!=2&& this.matrice_plateau[i][j-1]!=6)
 			{
 				this.setB(j-1);
 				this.matrice_plateau[i][j]=0;
@@ -75,6 +77,7 @@ public class Hero extends Plateau{
 
 			if(this.matrice_plateau[i][j-1]==3 || this.matrice_plateau[i][j-1]==4)
 			{
+				this.pointVie=this.pointVie - 25;
 				this.setA(0);
 				this.setB(0);
 				this.matrice_plateau[i][j]=0;
@@ -88,7 +91,7 @@ public class Hero extends Plateau{
 		int i = pos[0];
 		int j = pos[1];
 		if(i!=0 ) {
-			if(this.matrice_plateau[i-1][j]!=2&& this.matrice_plateau[i-1][j]!=3&& this.matrice_plateau[i-1][j]!=4)
+			if(this.matrice_plateau[i-1][j]!=2&& this.matrice_plateau[i-1][j]!=3&& this.matrice_plateau[i-1][j]!=4&& this.matrice_plateau[i-1][j]!=6)
 			{
 				this.setA(i-1);
 				this.matrice_plateau[i][j]=0;
@@ -97,6 +100,7 @@ public class Hero extends Plateau{
 
 			if(this.matrice_plateau[i-1][j]==3 || this.matrice_plateau[i-1][j]==4)
 			{
+				this.pointVie=this.pointVie - 25;
 				this.setA(0);
 				this.setB(0);
 				this.matrice_plateau[i][j]=0;
@@ -111,7 +115,7 @@ public class Hero extends Plateau{
 		int i = pos[0];
 		int j = pos[1];
 		if(i!= gettableau().length-1) {
-			if(this.matrice_plateau[i+1][j]!=2 && this.matrice_plateau[i+1][j]!=3&& this.matrice_plateau[i+1][j]!=4)
+			if(this.matrice_plateau[i+1][j]!=2 && this.matrice_plateau[i+1][j]!=3&& this.matrice_plateau[i+1][j]!=4&& this.matrice_plateau[i+1][j]!=6)
 			{
 				this.setA(i+1);
 				this.matrice_plateau[i][j]=0;
@@ -120,6 +124,7 @@ public class Hero extends Plateau{
 
 			if(this.matrice_plateau[i+1][j]==3 || this.matrice_plateau[i+1][j]==4)
 			{
+				this.pointVie=this.pointVie - 25;
 				this.setA(0);
 				this.setB(0);
 				this.matrice_plateau[i][j]=0;
@@ -137,19 +142,125 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int i = pos[0];
 		int j = pos[1];
-		for (int k=0; k<gettableau().length-1; ++i){
-		if (this.matrice_plateau[i][k]==3 ) {
-			this.matrice_plateau[i][k]=0;
+		if (this.matrice_plateau[i+1][j]==3 ) {
+			for (int k=0;k<liste_monstre.size();k++)
+			{
+				Monster m = liste_monstre.get(k);
+				if (m.pos_a==i+1 && m.pos_b==j)
+				{
+					m.setPoint_de_vie(m.getPoint_de_vie()-40);
+				}
+				if (m.getPoint_de_vie()<=0)
+				{
+					liste_monstre.remove(k);
+					matrice_plateau[i+1][j]=0;
+				}
+			}
 		}
-		else if (this.matrice_plateau[i][k]==4) {
-			this.matrice_plateau[i][k]=0;
+		else if (this.matrice_plateau[i+1][j]==4) {
+			for (int k=0;k<liste_fantome.size();k++)
+			{
+				Fantome f = liste_fantome.get(k);
+				if (f.pos_a==i+1 && f.pos_b==j)
+				{
+					f.setPointVie(f.getPointVie()-40);
+				}
+				if (f.getPointVie()<=0)
+				{
+					liste_fantome.remove(k);
+					matrice_plateau[i+1][j]=0;
+				}
+			}
 		}
-		else if (this.matrice_plateau[k][j]==3) {
-			this.matrice_plateau[k][j]=0;
+		else if (this.matrice_plateau[i][j+1]==3) {
+			for (int k=0;k<liste_monstre.size();k++)
+			{
+				Monster m = liste_monstre.get(k);
+				if (m.pos_a==i && m.pos_b==j+1)
+				{
+					m.setPoint_de_vie(m.getPoint_de_vie()-40);
+				}
+				if (m.getPoint_de_vie()<=0)
+				{
+					liste_monstre.remove(k);
+					matrice_plateau[i][j+1]=0;
+				}
+			}
 		}
-		else if (this.matrice_plateau[k][j]==4) {
-			this.matrice_plateau[k][j]=0;
+		else if (this.matrice_plateau[i][j+1]==4) {
+			for (int k=0;k<liste_fantome.size();k++)
+			{
+				Fantome f = liste_fantome.get(k);
+				if (f.pos_a==i && f.pos_b==j+1)
+				{
+					f.setPointVie(f.getPointVie()-40);
+				}
+				if (f.getPointVie()<=0)
+				{
+					liste_fantome.remove(k);
+					matrice_plateau[i][j-1]=0;
+				}
+			}		
 		}
-	}
+		else if (this.matrice_plateau[i-1][j]==3 ) {
+			for (int k=0;k<liste_monstre.size();k++)
+			{
+				Monster m = liste_monstre.get(k);
+				if (m.pos_a==i+1 && m.pos_b==j)
+				{
+					m.setPoint_de_vie(m.getPoint_de_vie()-40);
+				}
+				if (m.getPoint_de_vie()<=0)
+				{
+					liste_monstre.remove(k);
+					matrice_plateau[i-1][j]=0;
+				}
+			}
+		}
+		else if (this.matrice_plateau[i-1][j]==4) {
+			for (int k=0;k<liste_fantome.size();k++)
+			{
+				Fantome f = liste_fantome.get(k);
+				if (f.pos_a==i+1 && f.pos_b==j)
+				{
+					f.setPointVie(f.getPointVie()-40);
+				}
+				if (f.getPointVie()<=0)
+				{
+					liste_fantome.remove(k);
+					matrice_plateau[i-1][j]=0;
+				}
+			}
+		}
+		else if (this.matrice_plateau[i][j-1]==3) {
+			for (int k=0;k<liste_monstre.size();k++)
+			{
+				Monster m = liste_monstre.get(k);
+				if (m.pos_a==i && m.pos_b==j+1)
+				{
+					m.setPoint_de_vie(m.getPoint_de_vie()-40);
+				}
+				if (m.getPoint_de_vie()<=0)
+				{
+					liste_monstre.remove(k);
+					matrice_plateau[i-1][j]=0;
+				}
+			}
+		}
+		else if (this.matrice_plateau[i][j-1]==4) {
+			for (int k=0;k<liste_fantome.size();k++)
+			{
+				Fantome f = liste_fantome.get(k);
+				if (f.pos_a==i && f.pos_b==j-1)
+				{
+					f.setPointVie(f.getPointVie()-40);
+				}
+				if (f.getPointVie()<=0)
+				{
+					liste_fantome.remove(k);
+					matrice_plateau[i][j-1]=0;
+				}
+			}		
+		}
 	}
 }

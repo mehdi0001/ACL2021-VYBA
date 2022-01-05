@@ -100,6 +100,24 @@ public class principal extends JFrame implements KeyListener,ActionListener
 		fin.setVisible(true);
 		fin.show();
 	}
+	void perdue_partie()
+	{
+		f.dispose();
+		fin = new JFrame();
+		JLabel message_fin= new JLabel("Game Over ! :(");
+		JPanel panel_fin = new JPanel();
+		panel_fin.add(message_fin);
+		JButton bouton_rejouer = new JButton("Rejouer avec le même joueur");
+		bouton_rejouer.addActionListener(this);
+		JButton bouton_changer = new JButton("Changer de joueur");
+		bouton_changer.addActionListener(this);
+		panel_fin.add(bouton_rejouer);
+		panel_fin.add(bouton_changer);
+		fin.add(panel_fin);
+		fin.setSize(300,300);
+		fin.setVisible(true);
+		fin.show();
+	}
 
 	@Override
 	public void keyPressed(KeyEvent e) 
@@ -285,6 +303,10 @@ public class principal extends JFrame implements KeyListener,ActionListener
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
+		if(e.getKeyCode()==KeyEvent.VK_SPACE)
+		{ 
+			notre_heros.attaque_hero();
+		}
 		/*System.out.println();
 		System.out.println(notre_heros.liste_fantome.get(0).pos_a);
 		System.out.println(notre_heros.liste_fantome.get(0).pos_b);
@@ -292,6 +314,10 @@ public class principal extends JFrame implements KeyListener,ActionListener
 		if (notre_heros.getPosition()[0]==notre_heros.position_arrivee[0] && notre_heros.getPosition()[1]==notre_heros.position_arrivee[1])
 		{
 			fin_partie();
+		}
+		if (notre_heros.getPointVie()<=0)
+		{
+			perdue_partie();
 		}
 	}
 
