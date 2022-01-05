@@ -142,125 +142,153 @@ public class Hero extends Plateau{
 		int[] pos = getPosition();
 		int i = pos[0];
 		int j = pos[1];
-		if (this.matrice_plateau[i+1][j]==3 ) {
-			for (int k=0;k<liste_monstre.size();k++)
-			{
-				Monster m = liste_monstre.get(k);
-				if (m.pos_a==i+1 && m.pos_b==j)
+		if (i!=matrice_plateau.length)
+		{
+			if (this.matrice_plateau[i+1][j]==3 ) {
+				for (int k=0;k<liste_monstre.size();k++)
 				{
-					m.setPoint_de_vie(m.getPoint_de_vie()-40);
+					Monster m = liste_monstre.get(k);
+					if (m.pos_a==i+1 && m.pos_b==j)
+					{
+						m.setPoint_de_vie(m.getPoint_de_vie()-40);
+						this.setPointVie(this.getPointVie()-10);
+						m.MoveDownMon();
+					}
+					if (m.getPoint_de_vie()<=0)
+					{
+						liste_monstre.remove(k);
+						matrice_plateau[i+1][j]=0;
+					}
 				}
-				if (m.getPoint_de_vie()<=0)
+			}
+			else if (this.matrice_plateau[i+1][j]==4) {
+				for (int k=0;k<liste_fantome.size();k++)
 				{
-					liste_monstre.remove(k);
-					matrice_plateau[i+1][j]=0;
+					Fantome f = liste_fantome.get(k);
+					if (f.pos_a==i+1 && f.pos_b==j)
+					{
+						f.setPointVie(f.getPointVie()-40);
+						this.setPointVie(this.getPointVie()-10);
+						f.MoveDownFan();
+					}
+					if (f.getPointVie()<=0)
+					{
+						liste_fantome.remove(k);
+						matrice_plateau[i+1][j]=0;
+					}
 				}
 			}
 		}
-		else if (this.matrice_plateau[i+1][j]==4) {
-			for (int k=0;k<liste_fantome.size();k++)
-			{
-				Fantome f = liste_fantome.get(k);
-				if (f.pos_a==i+1 && f.pos_b==j)
+		if (j != matrice_plateau.length)
+		{
+			if (this.matrice_plateau[i][j+1]==3) {
+				for (int k=0;k<liste_monstre.size();k++)
 				{
-					f.setPointVie(f.getPointVie()-40);
+					Monster m = liste_monstre.get(k);
+					if (m.pos_a==i && m.pos_b==j+1)
+					{
+						m.setPoint_de_vie(m.getPoint_de_vie()-40);
+						this.setPointVie(this.getPointVie()-10);
+						m.MoveRightMon();
+					}
+					if (m.getPoint_de_vie()<=0)
+					{
+						liste_monstre.remove(k);
+						matrice_plateau[i][j+1]=0;
+					}
 				}
-				if (f.getPointVie()<=0)
+			}
+			else if (this.matrice_plateau[i][j+1]==4) {
+				for (int k=0;k<liste_fantome.size();k++)
 				{
-					liste_fantome.remove(k);
-					matrice_plateau[i+1][j]=0;
+					Fantome f = liste_fantome.get(k);
+					if (f.pos_a==i && f.pos_b==j+1)
+					{
+						f.setPointVie(f.getPointVie()-40);
+						this.setPointVie(this.getPointVie()-10);
+						f.MoveRightFan();
+					}
+					if (f.getPointVie()<=0)
+					{
+						liste_fantome.remove(k);
+						matrice_plateau[i][j-1]=0;
+					}
+				}		
+			}
+		}
+		if (i!=0)
+		{
+			if (this.matrice_plateau[i-1][j]==3 ) {
+				for (int k=0;k<liste_monstre.size();k++)
+				{
+					Monster m = liste_monstre.get(k);
+					if (m.pos_a==i+1 && m.pos_b==j)
+					{
+						m.setPoint_de_vie(m.getPoint_de_vie()-40);
+						this.setPointVie(this.getPointVie()-10);
+						m.MoveUpMon();
+					}
+					if (m.getPoint_de_vie()<=0)
+					{
+						liste_monstre.remove(k);
+						matrice_plateau[i-1][j]=0;
+					}
+				}
+			}
+			else if (this.matrice_plateau[i-1][j]==4) {
+				for (int k=0;k<liste_fantome.size();k++)
+				{
+					Fantome f = liste_fantome.get(k);
+					if (f.pos_a==i+1 && f.pos_b==j)
+					{
+						f.setPointVie(f.getPointVie()-40);
+						this.setPointVie(this.getPointVie()-10);
+						f.MoveUpFan();
+					}
+					if (f.getPointVie()<=0)
+					{
+						liste_fantome.remove(k);
+						matrice_plateau[i-1][j]=0;
+					}
 				}
 			}
 		}
-		else if (this.matrice_plateau[i][j+1]==3) {
-			for (int k=0;k<liste_monstre.size();k++)
-			{
-				Monster m = liste_monstre.get(k);
-				if (m.pos_a==i && m.pos_b==j+1)
+		if (j!=0)
+		{
+			if (this.matrice_plateau[i][j-1]==3) {
+				for (int k=0;k<liste_monstre.size();k++)
 				{
-					m.setPoint_de_vie(m.getPoint_de_vie()-40);
-				}
-				if (m.getPoint_de_vie()<=0)
-				{
-					liste_monstre.remove(k);
-					matrice_plateau[i][j+1]=0;
-				}
-			}
-		}
-		else if (this.matrice_plateau[i][j+1]==4) {
-			for (int k=0;k<liste_fantome.size();k++)
-			{
-				Fantome f = liste_fantome.get(k);
-				if (f.pos_a==i && f.pos_b==j+1)
-				{
-					f.setPointVie(f.getPointVie()-40);
-				}
-				if (f.getPointVie()<=0)
-				{
-					liste_fantome.remove(k);
-					matrice_plateau[i][j-1]=0;
-				}
-			}		
-		}
-		else if (this.matrice_plateau[i-1][j]==3 ) {
-			for (int k=0;k<liste_monstre.size();k++)
-			{
-				Monster m = liste_monstre.get(k);
-				if (m.pos_a==i+1 && m.pos_b==j)
-				{
-					m.setPoint_de_vie(m.getPoint_de_vie()-40);
-				}
-				if (m.getPoint_de_vie()<=0)
-				{
-					liste_monstre.remove(k);
-					matrice_plateau[i-1][j]=0;
+					Monster m = liste_monstre.get(k);
+					if (m.pos_a==i && m.pos_b==j+1)
+					{
+						m.setPoint_de_vie(m.getPoint_de_vie()-40);
+						this.setPointVie(this.getPointVie()-10);
+						m.MoveLeftMon();
+					}
+					if (m.getPoint_de_vie()<=0)
+					{
+						liste_monstre.remove(k);
+						matrice_plateau[i-1][j]=0;
+					}
 				}
 			}
-		}
-		else if (this.matrice_plateau[i-1][j]==4) {
-			for (int k=0;k<liste_fantome.size();k++)
-			{
-				Fantome f = liste_fantome.get(k);
-				if (f.pos_a==i+1 && f.pos_b==j)
+			else if (this.matrice_plateau[i][j-1]==4) {
+				for (int k=0;k<liste_fantome.size();k++)
 				{
-					f.setPointVie(f.getPointVie()-40);
-				}
-				if (f.getPointVie()<=0)
-				{
-					liste_fantome.remove(k);
-					matrice_plateau[i-1][j]=0;
-				}
+					Fantome f = liste_fantome.get(k);
+					if (f.pos_a==i && f.pos_b==j-1)
+					{
+						f.setPointVie(f.getPointVie()-40);
+						this.setPointVie(this.getPointVie()-10);
+						f.MoveLeftFan();
+					}
+					if (f.getPointVie()<=0)
+					{
+						liste_fantome.remove(k);
+						matrice_plateau[i][j-1]=0;
+					}
+				}		
 			}
-		}
-		else if (this.matrice_plateau[i][j-1]==3) {
-			for (int k=0;k<liste_monstre.size();k++)
-			{
-				Monster m = liste_monstre.get(k);
-				if (m.pos_a==i && m.pos_b==j+1)
-				{
-					m.setPoint_de_vie(m.getPoint_de_vie()-40);
-				}
-				if (m.getPoint_de_vie()<=0)
-				{
-					liste_monstre.remove(k);
-					matrice_plateau[i-1][j]=0;
-				}
-			}
-		}
-		else if (this.matrice_plateau[i][j-1]==4) {
-			for (int k=0;k<liste_fantome.size();k++)
-			{
-				Fantome f = liste_fantome.get(k);
-				if (f.pos_a==i && f.pos_b==j-1)
-				{
-					f.setPointVie(f.getPointVie()-40);
-				}
-				if (f.getPointVie()<=0)
-				{
-					liste_fantome.remove(k);
-					matrice_plateau[i][j-1]=0;
-				}
-			}		
 		}
 	}
 }
