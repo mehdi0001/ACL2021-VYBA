@@ -6,9 +6,7 @@ public class Fantome{ //extends Plateau {
 	private int pointVie;
 	public int pos_a,pos_b;
 	private Plateau plat;
-	public Fantome(/*int n, int m,*/int id_fantome,int pointVie, int a, int b, /*int nbr_fantome,*/   Plateau p) {
-		//super(n, m, a, b);
-		//this.nbr_fantome = nbr_fantome;
+	public Fantome(int id_fantome,int pointVie, int a, int b,Plateau p) {
 		this.id_fantome = id_fantome;
 		this.pointVie = pointVie;
 		this.pos_a=a;

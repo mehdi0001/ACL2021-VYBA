@@ -1,14 +1,12 @@
 public class Hero extends Plateau{
 	private String name;
 	private char c;
-	//public Plateau p;
 	public static int poit_de_vie_intial = 100;
 	public int pointVie;
-	public Hero(String name, char c, int n, int m, int a, int b/*, Plateau p*/ ){
+	public Hero(String name, char c, int n, int m, int a, int b ){
 		super(n, m, a, b);
 		this.name = name;
 		this.c = c;
-		//this.p = p;
 		pointVie = 100;
 	}
 	public String getName() {

@@ -1,7 +1,10 @@
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.*;
-import java.awt.event.*; 
+import java.awt.event.*;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import javax.swing.*; 
 import java.awt.*;
 public class principal extends JFrame implements KeyListener,ActionListener
@@ -81,6 +84,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.show();	
+
 	}
 	void fin_partie()
 	{
@@ -116,7 +120,8 @@ public class principal extends JFrame implements KeyListener,ActionListener
 		fin.add(panel_fin);
 		fin.setSize(300,300);
 		fin.setVisible(true);
-		fin.show();
+		fin.show();			
+
 	}
 
 	@Override
@@ -131,19 +136,19 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				depFan = Math.random();
 				if (depFan<0.25)
 				{
-				notre_heros.liste_fantome.get(k).MoveDownFan();
+					notre_heros.liste_fantome.get(k).MoveDownFan();
 				}
 				if (depFan<0.50 && depFan>=0.25)
 				{
-				notre_heros.liste_fantome.get(k).MoveLeftFan();
+					notre_heros.liste_fantome.get(k).MoveLeftFan();
 				}
 				if (depFan<0.75 && depFan>=0.5)
 				{
-				notre_heros.liste_fantome.get(k).MoveRightFan();
+					notre_heros.liste_fantome.get(k).MoveRightFan();
 				}
 				if (depFan>=0.75)
 				{
-				notre_heros.liste_fantome.get(k).MoveUpFan();
+					notre_heros.liste_fantome.get(k).MoveUpFan();
 				}
 			}
 			for(int k=0;k<notre_heros.liste_monstre.size();k++)
@@ -151,19 +156,19 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				depMon = Math.random();
 				if (depMon<0.25)
 				{
-				notre_heros.liste_monstre.get(k).MoveDownMon();
+					notre_heros.liste_monstre.get(k).MoveDownMon();
 				}
 				if (depMon<0.50 && depMon>=0.25)
 				{
-				notre_heros.liste_monstre.get(k).MoveLeftMon();
+					notre_heros.liste_monstre.get(k).MoveLeftMon();
 				}
 				if (depMon<0.75 && depMon>=0.5)
 				{
-				notre_heros.liste_monstre.get(k).MoveRightMon();
+					notre_heros.liste_monstre.get(k).MoveRightMon();
 				}
 				if (depMon>=0.75)
 				{
-				notre_heros.liste_monstre.get(k).MoveUpMon();
+					notre_heros.liste_monstre.get(k).MoveUpMon();
 				}
 			}
 			notre_heros.MoveDown();
@@ -179,19 +184,19 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				depFan = Math.random();
 				if (depFan<0.25)
 				{
-				notre_heros.liste_fantome.get(k).MoveDownFan();
+					notre_heros.liste_fantome.get(k).MoveDownFan();
 				}
 				if (depFan<0.50 && depFan>=0.25)
 				{
-				notre_heros.liste_fantome.get(k).MoveLeftFan();
+					notre_heros.liste_fantome.get(k).MoveLeftFan();
 				}
 				if (depFan<0.75 && depFan>=0.5)
 				{
-				notre_heros.liste_fantome.get(k).MoveRightFan();
+					notre_heros.liste_fantome.get(k).MoveRightFan();
 				}
 				if (depFan>=0.75)
 				{
-				notre_heros.liste_fantome.get(k).MoveUpFan();
+					notre_heros.liste_fantome.get(k).MoveUpFan();
 				}
 			}
 			for(int k=0;k<notre_heros.liste_monstre.size();k++)
@@ -199,19 +204,19 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				depMon = Math.random();
 				if (depMon<0.25)
 				{
-				notre_heros.liste_monstre.get(k).MoveDownMon();
+					notre_heros.liste_monstre.get(k).MoveDownMon();
 				}
 				if (depMon<0.50 && depMon>=0.25)
 				{
-				notre_heros.liste_monstre.get(k).MoveLeftMon();
+					notre_heros.liste_monstre.get(k).MoveLeftMon();
 				}
 				if (depMon<0.75 && depMon>=0.5)
 				{
-				notre_heros.liste_monstre.get(k).MoveRightMon();
+					notre_heros.liste_monstre.get(k).MoveRightMon();
 				}
 				if (depMon>=0.75)
 				{
-				notre_heros.liste_monstre.get(k).MoveUpMon();
+					notre_heros.liste_monstre.get(k).MoveUpMon();
 				}
 			}
 			notre_heros.MoveUp();
@@ -220,7 +225,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 		}
 		if(e.getKeyCode()==KeyEvent.VK_LEFT)
 		{ 
-			
+
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -228,19 +233,19 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				depFan = Math.random();
 				if (depFan<0.25)
 				{
-				notre_heros.liste_fantome.get(k).MoveDownFan();
+					notre_heros.liste_fantome.get(k).MoveDownFan();
 				}
 				if (depFan<0.50 && depFan>=0.25)
 				{
-				notre_heros.liste_fantome.get(k).MoveLeftFan();
+					notre_heros.liste_fantome.get(k).MoveLeftFan();
 				}
 				if (depFan<0.75 && depFan>=0.5)
 				{
-				notre_heros.liste_fantome.get(k).MoveRightFan();
+					notre_heros.liste_fantome.get(k).MoveRightFan();
 				}
 				if (depFan>=0.75)
 				{
-				notre_heros.liste_fantome.get(k).MoveUpFan();
+					notre_heros.liste_fantome.get(k).MoveUpFan();
 				}
 			}
 			for(int k=0;k<notre_heros.liste_monstre.size();k++)
@@ -248,19 +253,19 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				depMon = Math.random();
 				if (depMon<0.25)
 				{
-				notre_heros.liste_monstre.get(k).MoveDownMon();
+					notre_heros.liste_monstre.get(k).MoveDownMon();
 				}
 				if (depMon<0.50 && depMon>=0.25)
 				{
-				notre_heros.liste_monstre.get(k).MoveLeftMon();
+					notre_heros.liste_monstre.get(k).MoveLeftMon();
 				}
 				if (depMon<0.75 && depMon>=0.5)
 				{
-				notre_heros.liste_monstre.get(k).MoveRightMon();
+					notre_heros.liste_monstre.get(k).MoveRightMon();
 				}
 				if (depMon>=0.75)
 				{
-				notre_heros.liste_monstre.get(k).MoveUpMon();
+					notre_heros.liste_monstre.get(k).MoveUpMon();
 				}
 			}
 			notre_heros.MoveLeft();
@@ -276,19 +281,19 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				depFan = Math.random();
 				if (depFan<0.25)
 				{
-				notre_heros.liste_fantome.get(k).MoveDownFan();
+					notre_heros.liste_fantome.get(k).MoveDownFan();
 				}
 				if (depFan<0.50 && depFan>=0.25)
 				{
-				notre_heros.liste_fantome.get(k).MoveLeftFan();
+					notre_heros.liste_fantome.get(k).MoveLeftFan();
 				}
 				if (depFan<0.75 && depFan>=0.5)
 				{
-				notre_heros.liste_fantome.get(k).MoveRightFan();
+					notre_heros.liste_fantome.get(k).MoveRightFan();
 				}
 				if (depFan>=0.75)
 				{
-				notre_heros.liste_fantome.get(k).MoveUpFan();
+					notre_heros.liste_fantome.get(k).MoveUpFan();
 				}
 			}
 			for(int k=0;k<notre_heros.liste_monstre.size();k++)
@@ -296,19 +301,19 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				depMon = Math.random();
 				if (depMon<0.25)
 				{
-				notre_heros.liste_monstre.get(k).MoveDownMon();
+					notre_heros.liste_monstre.get(k).MoveDownMon();
 				}
 				if (depMon<0.50 && depMon>=0.25)
 				{
-				notre_heros.liste_monstre.get(k).MoveLeftMon();
+					notre_heros.liste_monstre.get(k).MoveLeftMon();
 				}
 				if (depMon<0.75 && depMon>=0.5)
 				{
-				notre_heros.liste_monstre.get(k).MoveRightMon();
+					notre_heros.liste_monstre.get(k).MoveRightMon();
 				}
 				if (depMon>=0.75)
 				{
-				notre_heros.liste_monstre.get(k).MoveUpMon();
+					notre_heros.liste_monstre.get(k).MoveUpMon();
 				}
 			}
 			notre_heros.MoveRight();
@@ -321,10 +326,6 @@ public class principal extends JFrame implements KeyListener,ActionListener
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
-		/*System.out.println();
-		System.out.println(notre_heros.liste_fantome.get(0).pos_a);
-		System.out.println(notre_heros.liste_fantome.get(0).pos_b);
-		notre_heros.Affichage(notre_heros.matrice_plateau);*/
 		if (notre_heros.getPosition()[0]==notre_heros.position_arrivee[0] && notre_heros.getPosition()[1]==notre_heros.position_arrivee[1])
 		{
 			fin_partie();

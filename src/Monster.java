@@ -6,9 +6,7 @@ public class Monster{ //extends Plateau{
 	public int pos_a,pos_b;
 	private Plateau plat;
 	public int[] d;
-	public Monster(/*int nbr_monster,*/ int id_monster, int point_de_vie, /*int n, int m,*/ int a, int b, Plateau p) {
-		//super(n, m, a, b);
-		//this.nbr_monster = nbr_monster;
+	public Monster(int id_monster, int point_de_vie,int a, int b, Plateau p) {
 		this.id_monster = id_monster;
 		this.point_de_vie = point_de_vie;
 		this.pos_a=a;
