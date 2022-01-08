@@ -41,7 +41,7 @@ class TestHero {
 	}
 	@Test
 	void testMoveLeft(){
-		Hero H = new Hero("Mehdi",'M',20,20,5,5);
+		Hero H = new Hero("Mehdi",'M',20,20,5,5);   
 		H.MoveLeft();
 		assertEquals(H.getPosition()[1],4);
 	}

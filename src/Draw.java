@@ -88,7 +88,7 @@ public class Draw extends JPanel
 				{
 					g.drawImage(case_piege,array*20,item*20,this);
 				}
-				else if (matrice_dessin[item][array]==7)
+				else if (matrice_dessin[item][array]==8)
 				{
 					g.drawImage(case_tp,array*20,item*20,this);
 				}

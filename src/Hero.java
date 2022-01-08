@@ -43,9 +43,20 @@ public class Hero extends Plateau{
 		if(j!= this.matrice_plateau[0].length-1 ) {
 			if(this.matrice_plateau[i][j+1]!=2&& this.matrice_plateau[i][j+1]!=3&& this.matrice_plateau[i][j+1]!=4&& this.matrice_plateau[i][j+1]!=6)
 			{
+ 				if(this.matrice_plateau[i][j+1]==8)
+				{
+					teleportation();
+					this.matrice_plateau[i][j+1]=8;
+				}
+				else if (this.matrice_plateau[i][j+1]==7)
+				{
+					
+				}
+				else {
 				this.setB(j+1);
 				this.matrice_plateau[i][j]=0;
 				this.matrice_plateau[i][j+1]=1;
+				}
 			}
 
 			if(this.matrice_plateau[i][j+1]==3 || this.matrice_plateau[i][j+1]==4)
@@ -68,9 +79,22 @@ public class Hero extends Plateau{
 		if(j!=0) {
 			if(this.matrice_plateau[i][j-1]!=3&& this.matrice_plateau[i][j-1]!=4 && this.matrice_plateau[i][j-1]!=2&& this.matrice_plateau[i][j-1]!=6)
 			{
+ 				if(this.matrice_plateau[i][j-1]==8)
+				{
+					teleportation();
+					this.matrice_plateau[i][j-1]=8;
+				}
+				else if (this.matrice_plateau[i][j+1]==7)
+				{
+					
+				}
+				else {
+					
+				
 				this.setB(j-1);
 				this.matrice_plateau[i][j]=0;
 				this.matrice_plateau[i][j-1]=1;
+				}
 			}
 
 			if(this.matrice_plateau[i][j-1]==3 || this.matrice_plateau[i][j-1]==4)
@@ -91,9 +115,20 @@ public class Hero extends Plateau{
 		if(i!=0 ) {
 			if(this.matrice_plateau[i-1][j]!=2&& this.matrice_plateau[i-1][j]!=3&& this.matrice_plateau[i-1][j]!=4&& this.matrice_plateau[i-1][j]!=6)
 			{
+				if(this.matrice_plateau[i-1][j]==8)
+				{
+					teleportation();
+					this.matrice_plateau[i-1][j]=8;
+				}
+				else if (this.matrice_plateau[i][j-1]==7)
+				{
+					
+				}
+				else {
 				this.setA(i-1);
 				this.matrice_plateau[i][j]=0;
 				this.matrice_plateau[i-1][j]=1;
+				}
 			}
 
 			if(this.matrice_plateau[i-1][j]==3 || this.matrice_plateau[i-1][j]==4)
@@ -115,9 +150,20 @@ public class Hero extends Plateau{
 		if(i!= gettableau().length-1) {
 			if(this.matrice_plateau[i+1][j]!=2 && this.matrice_plateau[i+1][j]!=3&& this.matrice_plateau[i+1][j]!=4&& this.matrice_plateau[i+1][j]!=6)
 			{
+				if(this.matrice_plateau[i+1][j]==8)
+				{
+					teleportation();
+					this.matrice_plateau[i+1][j]=8;
+				}
+				else if (this.matrice_plateau[i+1][j]==7)
+				{
+					
+				}
+				else {
 				this.setA(i+1);
 				this.matrice_plateau[i][j]=0;
 				this.matrice_plateau[i+1][j]=1;
+				}
 			}
 
 			if(this.matrice_plateau[i+1][j]==3 || this.matrice_plateau[i+1][j]==4)
@@ -288,5 +334,44 @@ public class Hero extends Plateau{
 				}		
 			}
 		}
+	}
+	public void teleportation() {
+		int[] pos = getPosition();
+		int i = pos[0];
+		int j = pos[1];
+		if(i==19 &&j==16) {
+			this.matrice_plateau[7][4]=1;
+			this.matrice_plateau[19][16]=0;
+		}
+		else if(i==7 &&j==2) {
+			this.matrice_plateau[19][18]=1;
+			this.matrice_plateau[7][2]=0;
+		}
+		else if(i==19 &&j==18) {
+			this.matrice_plateau[7][4]=1;
+			this.matrice_plateau[19][18]=0;
+		}
+		else if(i==7 &&j==4) {
+			this.matrice_plateau[19][18]=1;
+			this.matrice_plateau[7][4]=0;
+		}
+		else if(i==6 &&j==3) {
+			this.matrice_plateau[19][18]=1;
+			this.matrice_plateau[6][3]=0;
+		}
+		else if(i==8 &&j==3) {
+			this.matrice_plateau[19][18]=1;
+			this.matrice_plateau[8][3]=0;
+		}
+		else if(i==18 &&j==17) {
+			this.matrice_plateau[7][4]=1;
+			this.matrice_plateau[18][17]=0;
+		}
+		else if(i==20 &&j==17) {
+			this.matrice_plateau[7][4]=1;
+			this.matrice_plateau[20][17]=0;
+		}
+		
+				
 	}
 }

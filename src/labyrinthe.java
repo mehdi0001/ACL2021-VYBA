@@ -62,7 +62,8 @@ public class labyrinthe
 			}
 			plateau.liste_fantome.add(new Fantome (2,100,a,b,plateau));
 			plateau.matrice_plateau[a][b]=4;
-			
+			plateau.matrice_plateau[7][3]=8;
+			plateau.matrice_plateau[19][17]=8;
 		}
 		if (niveau==2)
 		{
@@ -129,6 +130,8 @@ public class labyrinthe
 			}
 			plateau.liste_fantome.add(new Fantome (3,100,a,b,plateau));
 			plateau.matrice_plateau[a][b]=4;
+			plateau.matrice_plateau[7][3]=8;
+			plateau.matrice_plateau[19][17]=8;
 		}
 		if (niveau==3)
 		{
@@ -213,6 +216,8 @@ public class labyrinthe
 			}
 			plateau.liste_fantome.add(new Fantome (4,100,a,b,plateau));
 			plateau.matrice_plateau[a][b]=4;
+			plateau.matrice_plateau[7][3]=8;
+			plateau.matrice_plateau[19][17]=8;
 		}
 	}
 
