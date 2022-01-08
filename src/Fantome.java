@@ -51,7 +51,7 @@ public class Fantome{ //extends Plateau {
 		{
 
 			if(j!= this.plat.matrice_plateau.length-1) {
-				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5)
+				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5 && this.plat.matrice_plateau[i][j+1]!=8)
 				{
 					if (this.plat.matrice_plateau[i][j+1]==2)
 					{
@@ -71,7 +71,7 @@ public class Fantome{ //extends Plateau {
 		else
 		{
 			if(j!= this.plat.matrice_plateau.length-1) {
-				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5)
+				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5 && this.plat.matrice_plateau[i][j+1]!=8)
 				{
 					if (this.plat.matrice_plateau[i][j+1]==2)
 					{
@@ -96,7 +96,7 @@ public class Fantome{ //extends Plateau {
 		if (this.plat.matrice_plateau[i][j]!=6 )
 		{
 			if(i!= 0) {
-				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5)
+				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5 && this.plat.matrice_plateau[i-1][j]!=8)
 				{
 					if (this.plat.matrice_plateau[i-1][j]==2)
 					{
@@ -116,7 +116,7 @@ public class Fantome{ //extends Plateau {
 		else
 		{
 			if(i!= 0) {
-				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5)
+				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5 && this.plat.matrice_plateau[i-1][j]!=8)
 				{
 					if (this.plat.matrice_plateau[i-1][j]==2)
 					{
@@ -141,7 +141,7 @@ public class Fantome{ //extends Plateau {
 		if (this.plat.matrice_plateau[i][j]!=6 )
 		{
 			if(j!=0) {
-				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5)
+				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5 && this.plat.matrice_plateau[i][j-1]!=8)
 				{
 					if (this.plat.matrice_plateau[i][j-1]==2)
 					{
@@ -161,7 +161,7 @@ public class Fantome{ //extends Plateau {
 		else
 		{
 			if(j!=0) {
-				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5)
+				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5 && this.plat.matrice_plateau[i][j-1]!=8)
 				{
 					if (this.plat.matrice_plateau[i][j-1]==2)
 					{
@@ -186,7 +186,7 @@ public class Fantome{ //extends Plateau {
 		if (this.plat.matrice_plateau[i][j]!=6)
 		{
 			if(i!= this.plat.matrice_plateau.length-1) {
-				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5)
+				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5 && this.plat.matrice_plateau[i+1][j]!=8)
 				{
 					if (this.plat.matrice_plateau[i+1][j]==2)
 					{
@@ -206,7 +206,7 @@ public class Fantome{ //extends Plateau {
 		else
 		{
 			if(i!= this.plat.matrice_plateau.length-1) {
-				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5)
+				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5 && this.plat.matrice_plateau[i+1][j]!=8)
 				{
 					if (this.plat.matrice_plateau[i+1][j]==2)
 					{
