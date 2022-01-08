@@ -91,5 +91,14 @@ class TestFontome {
 		assertEquals(F.getPosition()[0],0);
 		
 	}
+	@Test
+	void testmur() {//ici on teste que le fantome ne peut pas franchire le mur 
+		Plateau p = new Plateau(20,20,0,0);
+		Fantome F = new Fantome(7,100,0,0,p);
+		labyrinthe l = new labyrinthe(1,p);
+		F.MoveRightFan();
+		assertEquals(p.matrice_plateau[0][1],6); // ici la matrice doit egale a 6 car (le code du mur = 2 et le code du fan = 4)
+	}
+
 	
 }

@@ -86,5 +86,14 @@ class TestHero {
 		assertEquals(H.getPosition()[0],0);
 		
 	}
+	@Test
+	void testHeromur(){  //ici on teste que le hero ne peut pas franchire le mur 
+		Plateau p = new Plateau(20,20,0,0);
+		labyrinthe l = new labyrinthe(1,p);
+		Hero H = new Hero("Mehdi",'M',20,20,0,0);
+		H.MoveRight();
+		assertEquals(p.matrice_plateau[0][0],1); //dans notre code on a donne le numero 1 au mur 
+	}
+
 
 }

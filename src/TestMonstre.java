@@ -31,6 +31,15 @@ class TestMonstre {
 		assertEquals(M.getPosition_monster()[0],0);
 		assertEquals(M.getPosition_monster()[1],0);
 	}
+	@Test
+	void testmurmons() { //ici on teste que le monstre ne peut pas franchire le mur 
+		Plateau p = new Plateau(20,20,0,0);
+		labyrinthe l = new labyrinthe(1,p);
+		Monster M = new Monster(7,100,0,0,p);
+		M.MoveRightMon();
+		assertEquals(p.matrice_plateau[0][0],1);//dans notre code on a donne le numero 1 au mur 
+	}
+
 	
 	@Test
 	void testmoveRight(){
