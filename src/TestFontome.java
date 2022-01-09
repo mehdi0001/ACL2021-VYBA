@@ -97,7 +97,8 @@ class TestFontome {
 		Fantome F = new Fantome(7,100,0,0,p);
 		labyrinthe l = new labyrinthe(1,p);
 		F.MoveRightFan();
-		assertEquals(p.matrice_plateau[0][1],6); // ici la matrice doit egale a 6 car (le code du mur = 2 et le code du fan = 4)
+		F.MoveRightFan();
+		assertEquals(p.matrice_plateau[0][2],4); // 
 	}
 
 	

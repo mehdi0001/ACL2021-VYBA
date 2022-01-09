@@ -7,7 +7,7 @@ public class labyrinthe
 	{
 		plateau.liste_fantome= new ArrayList<Fantome>();
 		plateau.liste_monstre= new ArrayList<Monster>();
-		//Récupération de la position des murs dans les fichiers
+		//Rï¿½cupï¿½ration de la position des murs dans les fichiers
 		mur1 m1 = new mur1();
 		mur1_2 m2 = new mur1_2();
 		mur2_1 m3 = new mur2_1();
@@ -64,14 +64,14 @@ public class labyrinthe
 			plateau.liste_fantome.add(new Fantome (2,100,a,b,plateau));
 			plateau.matrice_plateau[a][b]=4;
 
-			//Generation des cases spéciales
+			//Generation des cases spï¿½ciales
 			plateau.matrice_plateau[7][4]=8;
 			plateau.matrice_plateau[19][17]=8;
 			plateau.matrice_plateau[5][3]=7;
-			plateau.matrice_plateau[14][16]=7;
+			plateau.matrice_plateau[14][16]=7;// 7 piege
 			plateau.matrice_plateau[3][17]=7;
 			plateau.matrice_plateau[6][5]=7;
-			plateau.matrice_plateau[7][8]=9;
+			plateau.matrice_plateau[7][8]=9; // 9 magique
 			plateau.matrice_plateau[2][8]=9;
 			plateau.matrice_plateau[8][13]=9;
 			plateau.matrice_plateau[11][19]=9;
@@ -143,7 +143,7 @@ public class labyrinthe
 			plateau.liste_fantome.add(new Fantome (3,100,a,b,plateau));
 			plateau.matrice_plateau[a][b]=4;
 
-			//Generation des cases spéciales
+			//Generation des cases spï¿½ciales
 			plateau.matrice_plateau[1][4]=8;
 			plateau.matrice_plateau[17][17]=8;
 			plateau.matrice_plateau[9][3]=7;
@@ -239,7 +239,7 @@ public class labyrinthe
 			plateau.liste_fantome.add(new Fantome (4,100,a,b,plateau));
 			plateau.matrice_plateau[a][b]=4;
 
-			//Generation des cases spéciales
+			//Generation des cases spï¿½ciales
 			plateau.matrice_plateau[2][6]=8;
 			plateau.matrice_plateau[6][16]=8;
 			plateau.matrice_plateau[4][18]=7;
