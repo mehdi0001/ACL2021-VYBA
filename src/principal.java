@@ -26,6 +26,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 
 	principal()
 	{
+		//Ecran permettant d'entrer les données du joueur
 		donnee_joueur= new JFrame("Données du joueur");
 		JPanel panel1 = new JPanel();
 		JPanel panel2 = new JPanel();
@@ -56,6 +57,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 
 	void niveau()
 	{
+		//Ecran de séléction du niveau
 		selection_niveau = new JFrame("Selection du niveau");
 		JPanel panel=new JPanel();
 		JLabel label1 = new JLabel("Appuyez sur 1 pour le niveau 1");
@@ -72,6 +74,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 
 	void deplacement_heros()
 	{
+		//Fenetre qui affiche le labyrinthe, avec les infos précédentes
 		selection_niveau.dispose();
 		this.notre_heros = new Hero(nom.getText(),genre_heros,20,20,0,0);
 		new labyrinthe(this.niveau,this.notre_heros);
@@ -80,7 +83,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 		f.getContentPane().setBackground(Color.GREEN);
 		f.getContentPane().add(new Draw(notre_heros));
 		f.addKeyListener(this);
-		f.setSize(600, 600);
+		f.setSize(1300, 700);
 		f.setVisible(true);
 		f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		f.show();	
@@ -88,6 +91,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 	}
 	void fin_partie()
 	{
+		//Ecran de fin de partie lorsque le héros atteint l'arrivée
 		f.dispose();
 		fin = new JFrame();
 		JLabel message_fin= new JLabel("Bravo, vous avez gagné");
@@ -106,6 +110,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 	}
 	void perdue_partie()
 	{
+		//Ecran de fin de partie lorsque le héros n'a plus de points de vie
 		f.dispose();
 		fin = new JFrame();
 		JLabel message_fin= new JLabel("Game Over ! :(");
@@ -127,8 +132,10 @@ public class principal extends JFrame implements KeyListener,ActionListener
 	@Override
 	public void keyPressed(KeyEvent e) 
 	{
+		//Fonction qui se déclenche dès qu'un bouton est pressé, qui récupère le code du bouton pour ensuite savoir quoi faire
 		if (e.getKeyCode() == KeyEvent.VK_DOWN) 
 		{
+			//Déplacement aléatoire des monstres et fantomes
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -172,11 +179,13 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				}
 			}
 			notre_heros.MoveDown();
+			//Actualisation de l'affichage :
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 
 		if (e.getKeyCode() == KeyEvent.VK_UP) { 
+			//Déplacement aléatoire des monstres et fantomes
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -220,12 +229,13 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				}
 			}
 			notre_heros.MoveUp();
+			//Actualisation de l'affichage :
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_LEFT)
 		{ 
-
+			//Déplacement aléatoire des monstres et fantomes
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -269,11 +279,13 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				}
 			}
 			notre_heros.MoveLeft();
+			//Actualisation de l'affichage :
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
 		if(e.getKeyCode()==KeyEvent.VK_RIGHT)
 		{
+			//Déplacement aléatoire des monstres et fantomes
 			double depMon;
 			double depFan;
 			for (int k=0;k<notre_heros.liste_fantome.size();k++)
@@ -317,6 +329,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 				}
 			}
 			notre_heros.MoveRight();
+			//Actualisation de l'affichage :
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
@@ -326,10 +339,12 @@ public class principal extends JFrame implements KeyListener,ActionListener
 			f.getContentPane().add(new Draw(notre_heros));
 			f.show();
 		}
+		//Test si le héros est arrivée :
 		if (notre_heros.getPosition()[0]==notre_heros.position_arrivee[0] && notre_heros.getPosition()[1]==notre_heros.position_arrivee[1])
 		{
 			fin_partie();
 		}
+		//Test si le héros a encore des points de vie
 		if (notre_heros.getPointVie()<=0)
 		{
 			perdue_partie();
@@ -367,6 +382,7 @@ public class principal extends JFrame implements KeyListener,ActionListener
 	@Override
 	public void actionPerformed(ActionEvent e) 
 	{
+		//Action a effectuer en fonction des boutons sur lesquels on appuie
 		if (e.getActionCommand() == "Valider")
 		{
 			donnee_joueur.dispose();

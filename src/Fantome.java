@@ -47,11 +47,13 @@ public class Fantome{ //extends Plateau {
 	{
 		int i =pos_a;
 		int j = pos_b;
+		//Déplacement des fantomes, en vérifiant qu'il n'y a pas d'autres monstres/fantomes, de case spéciale ou qu'il ne sorte pas du plateau
+
 		if (this.plat.matrice_plateau[i][j]!=6 )
 		{
 
 			if(j!= this.plat.matrice_plateau.length-1) {
-				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5 && this.plat.matrice_plateau[i][j+1]!=8)
+				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5 && this.plat.matrice_plateau[i][j+1]!=8&& this.plat.matrice_plateau[i][j+1]!=7&& this.plat.matrice_plateau[i][j+1]!=9&& this.plat.matrice_plateau[i][j+1]!=6)
 				{
 					if (this.plat.matrice_plateau[i][j+1]==2)
 					{
@@ -70,8 +72,9 @@ public class Fantome{ //extends Plateau {
 		}
 		else
 		{
+			//Déplacement des fantomes, en vérifiant qu'il n'y a pas d'autres monstres/fantomes, de case spéciale ou qu'il ne sorte pas du plateau
 			if(j!= this.plat.matrice_plateau.length-1) {
-				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5 && this.plat.matrice_plateau[i][j+1]!=8)
+				if(this.plat.matrice_plateau[i][j+1]!=3 && this.plat.matrice_plateau[i][j+1]!=4&& this.plat.matrice_plateau[i][j+1]!=5 && this.plat.matrice_plateau[i][j+1]!=8&& this.plat.matrice_plateau[i][j+1]!=7&& this.plat.matrice_plateau[i][j+1]!=9&& this.plat.matrice_plateau[i][j+1]!=8&& this.plat.matrice_plateau[i][j+1]!=7&& this.plat.matrice_plateau[i][j+1]!=6)
 				{
 					if (this.plat.matrice_plateau[i][j+1]==2)
 					{
@@ -93,10 +96,11 @@ public class Fantome{ //extends Plateau {
 	{
 		int i =pos_a;
 		int j = pos_b;
+		//Déplacement des fantomes, en vérifiant qu'il n'y a pas d'autres monstres/fantomes, de case spéciale ou qu'il ne sorte pas du plateau
 		if (this.plat.matrice_plateau[i][j]!=6 )
 		{
 			if(i!= 0) {
-				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5 && this.plat.matrice_plateau[i-1][j]!=8)
+				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5 && this.plat.matrice_plateau[i-1][j]!=8&& this.plat.matrice_plateau[i-1][j]!=7&& this.plat.matrice_plateau[i-1][j]!=9&& this.plat.matrice_plateau[i-1][j]!=6)
 				{
 					if (this.plat.matrice_plateau[i-1][j]==2)
 					{
@@ -116,7 +120,7 @@ public class Fantome{ //extends Plateau {
 		else
 		{
 			if(i!= 0) {
-				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5 && this.plat.matrice_plateau[i-1][j]!=8)
+				if (this.plat.matrice_plateau[i-1][j]!=3 && this.plat.matrice_plateau[i-1][j]!=4&& this.plat.matrice_plateau[i-1][j]!=5 && this.plat.matrice_plateau[i-1][j]!=8&& this.plat.matrice_plateau[i-1][j]!=7&& this.plat.matrice_plateau[i-1][j]!=9&& this.plat.matrice_plateau[i-1][j]!=6)
 				{
 					if (this.plat.matrice_plateau[i-1][j]==2)
 					{
@@ -138,10 +142,11 @@ public class Fantome{ //extends Plateau {
 	{
 		int i =pos_a;
 		int j = pos_b;
+		//Déplacement des fantomes, en vérifiant qu'il n'y a pas d'autres monstres/fantomes, de case spéciale ou qu'il ne sorte pas du plateau
 		if (this.plat.matrice_plateau[i][j]!=6 )
 		{
 			if(j!=0) {
-				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5 && this.plat.matrice_plateau[i][j-1]!=8)
+				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5 && this.plat.matrice_plateau[i][j-1]!=8&& this.plat.matrice_plateau[i][j-1]!=6 && this.plat.matrice_plateau[i][j-1]!=7 && this.plat.matrice_plateau[i][j-1]!=9 )
 				{
 					if (this.plat.matrice_plateau[i][j-1]==2)
 					{
@@ -161,7 +166,7 @@ public class Fantome{ //extends Plateau {
 		else
 		{
 			if(j!=0) {
-				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5 && this.plat.matrice_plateau[i][j-1]!=8)
+				if(this.plat.matrice_plateau[i][j-1]!=3 && this.plat.matrice_plateau[i][j-1]!=4&& this.plat.matrice_plateau[i][j-1]!=5 && this.plat.matrice_plateau[i][j-1]!=8&& this.plat.matrice_plateau[i][j-1]!=6 && this.plat.matrice_plateau[i][j-1]!=7 && this.plat.matrice_plateau[i][j-1]!=9)
 				{
 					if (this.plat.matrice_plateau[i][j-1]==2)
 					{
@@ -183,10 +188,11 @@ public class Fantome{ //extends Plateau {
 	{
 		int i =pos_a;
 		int j = pos_b;
+		//Déplacement des fantomes, en vérifiant qu'il n'y a pas d'autres monstres/fantomes, de case spéciale ou qu'il ne sorte pas du plateau
 		if (this.plat.matrice_plateau[i][j]!=6)
 		{
 			if(i!= this.plat.matrice_plateau.length-1) {
-				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5 && this.plat.matrice_plateau[i+1][j]!=8)
+				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5 && this.plat.matrice_plateau[i+1][j]!=8&& this.plat.matrice_plateau[i+1][j]!=6 && this.plat.matrice_plateau[i+1][j]!=7 && this.plat.matrice_plateau[i+1][j]!=9)
 				{
 					if (this.plat.matrice_plateau[i+1][j]==2)
 					{
@@ -206,7 +212,7 @@ public class Fantome{ //extends Plateau {
 		else
 		{
 			if(i!= this.plat.matrice_plateau.length-1) {
-				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5 && this.plat.matrice_plateau[i+1][j]!=8)
+				if (this.plat.matrice_plateau[i+1][j]!=3 && this.plat.matrice_plateau[i+1][j]!=4&& this.plat.matrice_plateau[i+1][j]!=5 && this.plat.matrice_plateau[i+1][j]!=8&& this.plat.matrice_plateau[i+1][j]!=6 && this.plat.matrice_plateau[i+1][j]!=7 && this.plat.matrice_plateau[i+1][j]!=9)
 				{
 					if (this.plat.matrice_plateau[i+1][j]==2)
 					{
