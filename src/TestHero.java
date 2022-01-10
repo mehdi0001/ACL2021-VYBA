@@ -181,6 +181,20 @@ class TestHero  {
 		H.attaque_hero(); 
 		assertEquals(H.matrice_plateau[17][0],0);
 	}
+	@Test
+	void testMortHero() { //Ici on verifie que le Hero Revient a la position initiale et que son point de vie diminue de -25 apres contacte avec monstre
+		Plateau p = new Plateau(20,20,0,0);
+		//labyrinthe l = new labyrinthe(1,p);
+		Hero H = new Hero("Mehdi",'M',20,20,18,0);
+		Monster M = new Monster(7,40,17,0,p);
+		H.matrice_plateau[18][0] = 1;
+		H.matrice_plateau[17][0] = 3;
+		H.MoveUp(); 
+		assertEquals(H.matrice_plateau[17][0],3);
+		assertEquals(H.matrice_plateau[18][0],0);
+		assertEquals(H.matrice_plateau[0][0],1);
+		assertEquals(H.getPointVie(),75);
+	}
 
 }
 	
