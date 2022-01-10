@@ -163,14 +163,24 @@ class TestHero  {
 		assertEquals(H.getPointVie(),85);
 		
 		}
+	@Test
 	void case_magique() {
 		Plateau p = new Plateau(20,20,0,0);
 		labyrinthe l = new labyrinthe(1,p);
 		Hero H = new Hero("Mehdi",'M',20,20,5,3);
+		H.case_magique();
 		assertNotEquals(H.getPointVie(),100);
 		
 	}
-	
+	@Test
+	void testattaque() {
+		Plateau p = new Plateau(20,20,0,0);
+		//labyrinthe l = new labyrinthe(1,p);
+		Hero H = new Hero("Mehdi",'M',20,20,18,0);
+		Monster M = new Monster(7,40,17,0,p);
+		H.attaque_hero(); 
+		assertEquals(H.matrice_plateau[17][0],0);
+	}
 
 }
 	
