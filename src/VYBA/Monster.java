@@ -1,3 +1,4 @@
+package VYBA;
 public class Monster{ //extends Plateau{
 	private int nbr_monster;
 	private int id_monster;

@@ -1,3 +1,4 @@
+package VYBA;
 public class Hero extends Plateau{
 	private String name;
 	private char c;

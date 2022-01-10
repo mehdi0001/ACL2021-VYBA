@@ -1,4 +1,4 @@
-
+package VYBA;
 public class Fantome{ //extends Plateau {
 	private int nbr_fantome;
 	private int id_fantome;
