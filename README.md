@@ -13,7 +13,7 @@ You need [Maven](https://maven.apache.org/) to run this game.
 
 ```bash
 mvn compile
-mvn exec:java -Dexec.mainClass=start.Main
+mvn exec:java -Dexec.mainClass=VYBA.principal
 ```
 
 
