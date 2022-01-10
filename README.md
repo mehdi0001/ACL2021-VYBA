@@ -3,7 +3,7 @@
 `Pacman_VYBA ` is a labyrinth game developed with Java.
 
 
-
+![pacman](src//image//pacman.png)
 
 ## Installation
 ### Prerequisites
@@ -23,4 +23,5 @@ Mohamed Bougaba
 Mohamed Afkir
 Paul Vincent
 Youness Lifsal
+
 
